@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Bem vindxs ao Repositório do DinnerDash 06 :sparkles:
 
-Things you may want to cover:
+Aqui jaz com muito amor :heart: o projetinho Ruby on Rails para vocês trabalharem nesta aplicação muito show de bola.
 
-* Ruby version
+Lembrem de seguir o protocolo/o procedimento/o padrão/as regrinhas de convivência do Git que a gente passou para vocês. Vamos trabalhar em equipe e codar muito :wink:.
 
-* System dependencies
+### To do:
+- [x] Ser amigável
+- [x] Sempre tirar dúvidas
+- [x] Dedicar-se
+- [ ] Marcar horinhas no Clockfy
+- [ ] Terminar o projeto
+- [ ] Passar no PT
 
-* Configuration
+### Alguns links úteis:
 
-* Database creation
+- Caso esqueçam comandinhos do GitHub, aqui tem um [guia baita legal](http://rogerdudler.github.io/git-guide/index.pt_BR.html);
+- E se tiverem dúvidazinhas sobre Rails, é sempre legal ver a [documentação](https://guides.rubyonrails.org/);
+- Quando o assunto é flexbox, eu entendo melhor como fazer o que eu quero com esse simulador [aqui](https://demos.scotch.io/visual-guide-to-css3-flexbox-flexbox-playground/demos/)
 
-* Database initialization
+É isto, se precisarem de ajuda, estamos disponíveis :smile:.
 
-* How to run the test suite
+Bjs,
+Yamin.
 
-* Services (job queues, cache servers, search engines, etc.)
+P.S.: Fiquem com esse gatinho fofinho.
 
-* Deployment instructions
-
-* ...
+![Image of a cutie cat]
+(https://media1.tenor.com/images/df3b566982bc7dfbe42b2a143f208fcd/tenor.gif)
