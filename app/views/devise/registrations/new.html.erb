@@ -1,29 +1,41 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<div class="back">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+		<img src="app/assets/images/dinner.jpg" class="tamanho" alt="Dinner">
+		<div class="log">
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+			<div class="titulo"><h1>Dinnerdash</h1></div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+				<div class="pad">
+          <p>Email</p>
+          <div> <input type="email" id="email" <%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
+        </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+        <div class="pad">
+          <% if @minimum_password_length %>
+          <% end %>
+          <p>Senha</p>
+					<div> <input type="password" id="password" <%= f.password_field :password, autocomplete: "new-password" %></div>
+				</div>
 
-<%= render "devise/shared/links" %>
+      <div class="pad">
+        <p>Confirme sua senha</p>
+				<div> <input type="password" id="password" <%= f.password_field :password_confirmation, autocomplete: "new-password" %></div>
+				</div>
+
+        <div class="pad1">
+					<div><input class="button" type="submit" <%= f.submit "Cadastrar-se" %></div>
+				</div>
+
+
+        <% end %>
+			<div class="linha"></div>
+			<div class="pad1"><span id="bold">Já possui conta?</span></div>
+			<div class="pad1">
+			<input type="submit" class="buttonc" align="center" value="Fazer Login" <%= render "devise/shared/links" %>
+		</div>
+	</div>
+
+</div>

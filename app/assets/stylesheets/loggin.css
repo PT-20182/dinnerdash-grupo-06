@@ -1,0 +1,133 @@
+*
+{
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1
+{
+	font-size: 50px;
+}
+
+
+.tamanho
+{
+	width: 100%;
+	height: 100vh;
+}
+
+.back
+{
+	display:flex;
+}
+
+.log
+{
+	background-color: white;
+	position: absolute;
+	right:0;
+	width: 38%;
+	height: 100vh;
+}
+
+.titulo
+{
+	margin-left: 13%;
+	margin-bottom: 10%;
+	margin-top: 13%;
+}
+
+#nome
+{
+	padding: 3%;
+	width: 100%;
+	border-radius: 4px;
+	border:solid 1px #a0a0a0;
+}
+
+#email
+{
+	padding: 3%;
+	width: 100%;
+	border-radius: 4px;
+	border:solid 1px #a0a0a0;
+}
+
+#password
+{
+	padding: 3%;
+	width: 100%;
+	border-radius: 4px;
+	border:solid 1px #a0a0a0;
+}
+
+#senhaconfimada
+{
+	padding: 3%;
+	width: 100%;
+	border-radius: 4px;
+	border:solid 1px #a0a0a0;
+}
+
+.pad
+{
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.pad1
+{
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top:6%;
+	margin-bottom: 5%;
+}
+
+.button
+{
+	padding :3%;
+	border-radius: 5px;
+	border:solid 2px #39cc6c;
+	background-color: #39cc6c;
+	width: 100%;
+}
+
+.button:hover
+{
+	padding :3%;
+	border:solid 2px green;
+	border-radius: 5px;
+	background-color: white;
+	cursor: pointer;
+
+}
+
+.button span
+{
+	color : white;
+}
+
+.linha
+{
+	margin-top:8.8%;
+	border-top: solid 2px #a0a0a0;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.buttonc
+{
+	padding :3%;
+	border-radius: 5px;
+	background-color: white;
+	border:solid 1px #39cc6c;
+	width: 100%;
+}
+
+.buttonc:hover
+{
+	padding :3%;
+	border:solid 2px green;
+	border-radius: 5px;
+	background-color: #39cc6c;
+	cursor: pointer;
+}
