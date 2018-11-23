@@ -16,6 +16,11 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+
+    <% if current_page?(new_user_registration_path) || current_page?(user_session_path)%>
+    <% else %>
+      <%= render "layouts/header" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

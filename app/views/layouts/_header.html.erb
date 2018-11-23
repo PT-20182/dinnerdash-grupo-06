@@ -1,0 +1,34 @@
+<% if current_page?(root_path) %>
+    <div class="header-home">
+<% elsif current_page?(edit_registration_path)%>
+    <div class="header-perfil">
+<% end %>
+        <div class="top-box"> 
+            <div class="left-box">
+                dinnerdash
+            </div>
+            <div class="rigth-box">
+                <% if user_signed_in? %>
+                    <%= link_to('perfil', edit_user_registration_path, class:'link') %>
+                    <%= link_to('sair', destroy_user_session_path, method: :delete, class: 'link')%> 
+                <% else %>
+                    <%= link_to('entrar', user_session_path, class: 'link')%> 
+                    <%= link_to('cadastro', new_user_registration_path, class: 'link')%> 
+                <% end %>
+            </div>
+        </div>
+        <div class="bottom-box">
+            <div class="big-bottom-box">
+                <% if current_page?(root_path) %>
+                    <span>Monte o seu prato</span>        
+                <% else %>
+                <% end %>
+            </div>
+            <div class="small-bottom-box">
+                <% if current_page?(root_path) %>
+                    <span>Escolha sua salada, molho, prato principal, guarnição e bebida</span>
+                <% else %>
+                <% end %>
+            </div>
+        </div>
+    </div>
