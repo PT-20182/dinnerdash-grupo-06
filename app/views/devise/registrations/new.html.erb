@@ -1,30 +1,37 @@
 
-<div class="back">
-
 
 		<%= image_tag("dinner.jpg", :alt => "Dinner", :class => "tamanho") %>
 		<div class="log">
 
-			<div class="titulo"><h1>Dinnerdash</h1></div>
+			<div class="titulo"><h1 id="title"> Dinnerdash</h1></div>
+			<div class="pad">
+			    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+	</div>
+
 			<div class="pad">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= devise_error_messages! %>
 			</div>
 				<div class="pad">
           <p>Email</p>
-          <div> <input type="email" id="email" <%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
+          <div><%= f.email_field :email, autofocus: true, autocomplete: "email",  :id=>"email"  %></div>
         </div>
 
         <div class="pad">
           <% if @minimum_password_length %>
           <% end %>
           <p>Senha</p>
-					<div> <input type="password" id="password" <%= f.password_field :password, autocomplete: "new-password" %></div>
+					<div> <%= f.password_field :password, autocomplete: "new-password", :id=>"password"  %></div>
 				</div>
 
       <div class="pad">
         <p>Confirme sua senha</p>
-				<div> <input type="password" id="password" <%= f.password_field :password_confirmation, autocomplete: "new-password" %></div>
+				<div><%= f.password_field :password_confirmation, autocomplete: "new-password", :id=>"password_confirmation" %></div>
 				</div>
 
         <div class="pad1">
@@ -36,7 +43,7 @@
 			<div class="linha"></div>
 			<div class="pad1"><span id="bold">Já possui conta?</span></div>
 			<div class="pad1">
-			<%=button_to "Sign-in",new_user_session_path, :class => "buttonc" %>
+			<%=button_to "Sign-up", new_user_session_path,class: "buttonc",:method => "get" %>
 		</div>
 	</div>
 

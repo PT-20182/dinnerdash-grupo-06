@@ -1,9 +1,19 @@
-<div class="back">
+
+
 		<%= image_tag("dinner.jpg", :alt => "Dinner", :class => "tamanho") %>
 		<div class="log" class="center">
-			<div class="titulo"><h1>Dinnerdash</h1></div>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+			<div class="titulo"><h1 id="title">Dinnerdash</h1></div>
+			<div class="pad">
+			    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+  </div>
+
 				<div class="pad">
+					<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 					<p>Email</p>
 					<div> <input type="text" id="email" <%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
 				</div>
@@ -12,25 +22,21 @@
 					<div> <input type="password" id="password" <%= f.password_field :password, autocomplete: "current-password" %></div>
         </div>
 				<div class="pad1">
-					<div align="center"><input class="button" type="submit" name="Fazer Login"></div>
-				</div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  			<% if devise_mapping.rememberable? -%>
+      	<%= f.check_box :remember_me %>
+      	<%= f.label :remember_me %>
+			  <% end -%>
     </div>
-  <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+	<div class="pad1">
+    <%= f.submit "Log in", :class => "button"%>
   </div>
 <% end %>
 
 			<div class="linha"></div>
 			<div class="pad1"><span id="bold">Já possui conta?</span></div>
 			<div class="pad1">
-			<%=button_to "Sign-un", new_user_registration_path, :class => "buttonc" %>
+			<%=button_to "Sign-up", new_user_registration_path,class: "buttonc",:method => "get" %>
 		</div>
 	</div>
 </div>

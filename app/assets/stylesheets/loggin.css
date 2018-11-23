@@ -33,7 +33,7 @@ h1
 {
 	margin-left: 13%;
 	margin-bottom: 10%;
-	margin-top: 13%;
+	margin-top: 11%;
 }
 
 #nome
@@ -60,7 +60,7 @@ h1
 	border:solid 1px #a0a0a0;
 }
 
-#senhaconfimada
+#password_confirmation
 {
 	padding: 3%;
 	width: 100%;
@@ -121,13 +121,23 @@ h1
 	background-color: white;
 	border:solid 1px #39cc6c;
 	width: 100%;
-}
 
+}
+#none
+{
+	color: black;
+	size: 100%;
+	text-decoration: none;
+}
 .buttonc:hover
 {
 	padding :3%;
-	border:solid 2px green;
+	border:solid 1px green;
 	border-radius: 5px;
 	background-color: #39cc6c;
 	cursor: pointer;
+}
+#title
+{
+	font-size: 50px;
 }
