@@ -2,12 +2,14 @@
 <div class="back">
 
 
-		<img src="app/assets/images/dinner.jpg" class="tamanho" alt="Dinner">
+		<%= image_tag("dinner.jpg", :alt => "Dinner", :class => "tamanho") %>
 		<div class="log">
 
 			<div class="titulo"><h1>Dinnerdash</h1></div>
+			<div class="pad">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= devise_error_messages! %>
+			</div>
 				<div class="pad">
           <p>Email</p>
           <div> <input type="email" id="email" <%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
@@ -34,7 +36,7 @@
 			<div class="linha"></div>
 			<div class="pad1"><span id="bold">Já possui conta?</span></div>
 			<div class="pad1">
-			<input type="submit" class="buttonc" align="center" value="Fazer Login" <%= render "devise/shared/links" %>
+			<%=button_to "Sign-in",new_user_session_path, :class => "buttonc" %>
 		</div>
 	</div>
 
