@@ -10,16 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_11_22_150409) do
-=======
 ActiveRecord::Schema.define(version: 2018_11_24_184736) do
->>>>>>> 54d79876e9d7728a4d7f9ae7ff86a513562c9fbb
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -41,6 +36,12 @@ ActiveRecord::Schema.define(version: 2018_11_24_184736) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -53,12 +54,6 @@ ActiveRecord::Schema.define(version: 2018_11_24_184736) do
     t.boolean "is_admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-=======
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
->>>>>>> 54d79876e9d7728a4d7f9ae7ff86a513562c9fbb
   end
 
 end

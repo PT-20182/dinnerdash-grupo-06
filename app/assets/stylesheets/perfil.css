@@ -1,0 +1,277 @@
+*
+{
+	font-family: 'Amaranth',sans-serif;
+	font-weight: normal;
+}
+
+.tamanho
+{
+	width: 100%;
+	height: 100vh;
+}
+.back
+{
+	display: flex;
+	width: 100%;
+	height: 100vh;
+}
+.perf
+{
+	background-color: white;
+	position: absolute;
+	top:	60vh;
+	width: 100%;
+	height: 40vh;
+}
+.bar
+{
+	display: flex;
+	flex-direction: row;
+	position: absolute;
+	top:55vh;
+	background-color: #303031;
+	width: 100%;
+	height: 10%;
+}
+footer
+{
+	padding-left: 0.3em;
+	padding-top: 1.5em;
+	position: fixed;
+	bottom: 0%;
+	background-color: #DEE2E6;
+	width: 100%;
+	height: 6vh;
+
+}
+
+.normal
+{
+	text-decoration: none;
+	color: black;
+}
+.normal:hover
+{
+	text-decoration: none;
+	color: black;
+}
+
+.space
+{
+	padding-left: 18px;
+}
+
+
+.centro
+{
+	display: flex;
+	flex-direction: column;
+	margin-top: 0em;
+	width: 100%;
+	height: 100%;
+}
+
+.tabela{
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	border-collapse: collapse;
+	width: 75%;
+	height: 0.7%;
+	background-color:  #FFFFFF;
+	text-align: center;
+	margin-top: 1%;
+	padding-bottom: 2%;
+	align-self:center;
+	order: -1;
+}
+.body{}
+.head{
+	background-color:  #DEE2E6;
+}
+
+.StatusPendente{
+	padding: 7px;
+	padding-right: 21px;
+	padding-left: 21px;
+	color:#FFFFFF;
+	border-radius: 10px;
+	background-color: blue;
+	display: flex;
+	justify-content: center;
+
+}
+.StatusEnviado{
+	padding: 7px;
+	padding-right: 21px;
+	padding-left: 21px;
+	color:#FFFFFF;
+	border-radius: 10px;
+	background-color: #28a745;
+	display: flex;
+	justify-content: center;
+}
+.StatusCancelado{
+	padding: 7px;
+	padding-right: 21px;
+	padding-left: 21px;
+	color:#FFFFFF;
+	border-radius: 10px;
+	background-color:  #E82431;
+	display: flex;
+	justify-content: center;
+
+}
+.See{
+	color: #007bff;
+}
+.See:hover{
+	text-decoration: none;
+	color: #007bff;
+}
+.Edit{
+	padding :3%;
+	color: #FDDF4C;
+	border:none 0px #FDDF4C;
+	width: 100%;
+	background-color: white;
+}
+.Edit:hover{
+	padding :3%;
+	border:none 0px green;
+	background-color: white;
+	cursor: pointer;
+	font-size: bold
+}
+.Del{
+		padding :3%;
+	color: #E82431;
+	border:none 0px #E82431;
+	width: 100%;
+	background-color: white;
+}
+.Del:hover{
+	padding :3%;
+	border:none 0px green;
+	background-color: white;
+	cursor: pointer;
+	font-size: bold
+}
+th,td{
+	padding:0.7%;
+	border-bottom: solid 3px #DEE2E6;
+}
+footer span
+{
+
+	font-size:1em;
+}
+.nav
+{
+	width: 100%;
+	margin-left:2%;
+}
+.nav a
+{
+	padding-left: 3%;
+	padding-top: 1%;
+}
+.nav a
+{
+	color:  #868686;
+}
+#current
+{
+	color: #DEE2E6;
+}
+.buttontt:hover
+{
+	text-decoration: none;
+}
+#current:hover
+{
+	color: #DEE2E6;
+}
+#opcao:hover
+{
+	color:  #868686;
+}
+.titulo p
+{
+	position: absolute;
+	font-size: 70px;
+	top: 35%;
+	left: 5%;
+	color: #FAFAFA;
+}
+.titulo span
+{
+	position: absolute;
+	left: 5%;
+	top: 3%;
+	font-size: 28px;
+	color: #FAFAFA;
+}
+#decoracao
+{
+	position: absolute;
+	left: 5%;
+	top: 43%;
+	font-size: 40px;
+	color: #FAFAFA;
+}
+.topnav
+{
+	position: absolute;
+	right: 5%;
+	top: 3%;
+	font-size: 18px;
+	flex-direction: row;
+}
+.topnav a
+{
+	padding-right:15px;
+	color:#FAFAFA;
+}
+#currentt
+{
+	color: #FDDF4C;
+}
+.buttontt:hover
+{
+	text-decoration: none;
+}
+#currentt:hover
+{
+	color: #FDDF4C;
+}
+#opcaot:hover
+{
+	color:  #FAFAFA;
+
+}
+.backoff
+{
+	font-family: sans-serif;
+	font-weight: bold;
+}
+.add{
+	padding: 0.8%;
+	border-radius: 5px;
+	background-color: #39cc6c;
+	border:solid 1px #39cc6c;
+	width: 20%;
+	height: 3%;
+	left: 5%;
+	text-decoration: none;
+
+}
+.add:hover
+{
+	background-color: white;
+	cursor: pointer;
+}
+.pad2
+{
+	margin-left: 12.4%;
+	margin-bottom: 5%;
+	padding-top: 2%;
+}
