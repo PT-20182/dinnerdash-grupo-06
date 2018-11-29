@@ -40,10 +40,20 @@ body {
 }
 
 // coisinhas escritas no canto direito
-.rigth-box {
+.rigth-box-home {
     color: white;
     font-family: 'Open Sans', sans-serif;
     font-size: 12px;
+    width: 110px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rigth-box-perfil {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
     width: 80px;
     display: flex;
     flex-direction: row;
@@ -54,14 +64,13 @@ body {
 .bottom-box {
     display: flex;
     flex-direction: column;
-    padding: 25vh 0 0 80px;
+    padding: 30vh 0 0 80px;
 }
 // frase grande embaixo
 .big-bottom-box {
     color: white;
     font-family: 'Open Sans', sans-serif;
     font-size: 52px;
-    padding-bottom: 10px; 
 }
 
 // frase pequenina embaixo
@@ -74,6 +83,11 @@ body {
 // para o link de sign in e sign up nao ficar azuzinho
 
 .link {
+    text-decoration: none;
+    color: white;
+}
+
+.link:hover {
     text-decoration: none;
     color: white;
 }

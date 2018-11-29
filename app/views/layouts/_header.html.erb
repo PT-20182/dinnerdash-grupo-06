@@ -1,13 +1,17 @@
 <% if current_page?(root_path) %>
     <div class="header-home">
-<% elsif current_page?(edit_registration_path)%>
+<% elsif controller_name == 'registrations' %>
     <div class="header-perfil">
 <% end %>
         <div class="top-box"> 
             <div class="left-box">
                 dinnerdash
             </div>
-            <div class="rigth-box">
+        <% if user_signed_in? %>
+            <div class="rigth-box-perfil">
+        <% else%>
+            <div class="rigth-box-home">
+        <% end %>
                 <% if user_signed_in? %>
                     <%= link_to('perfil', edit_user_registration_path, class:'link') %>
                     <%= link_to('sair', destroy_user_session_path, method: :delete, class: 'link')%> 
@@ -20,14 +24,16 @@
         <div class="bottom-box">
             <div class="big-bottom-box">
                 <% if current_page?(root_path) %>
-                    <span>Monte o seu prato</span>        
-                <% else %>
+                    Monte o seu prato       
+                <% elsif controller_name == 'registrations'%>
+                    Seu perfil
                 <% end %>
             </div>
             <div class="small-bottom-box">
                 <% if current_page?(root_path) %>
-                    <span>Escolha sua salada, molho, prato principal, guarnição e bebida</span>
-                <% else %>
+                    Escolha sua salada, molho, prato principal, guarnição e bebida
+                <% elsif controller_name == 'registrations' %>
+                    Atualize os seus dados pessoais e senhas.
                 <% end %>
             </div>
         </div>
