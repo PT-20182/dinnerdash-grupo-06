@@ -31,11 +31,11 @@
               <td><%=%></td>
               <td><div ><%= category.created_at.strftime("%d/%m/%Y") %></div></td>
               <td><div><%= button_to 'Editar', edit_category_path(category), method: 'get',class: "Edit"%></div></td>
-              <td><div><%= button_to 'Remover', category_path(category), method: 'delete', data: { confirm: 'Are you sure?' },class: "Del"%></div></td>
+              <td><div><%= button_to 'Remover', category_path(category), method: 'delete', data: { confirm: 'Deseja Mesmo Excluir ?' },class: "Del"%></div></td>
           <% end %>
         </tbody>
 
-          <div class="pad2"><%= button_to "Nova Categoria", new_category_path,class:"add",:method => "get"%></div>
+          <div class="pad2"><%= button_to "Nova Categoria", new_category_path,class:"add", :method => "get" %></div>
       </div>
 
   </div>
