@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-    validates :name, length: {minimum: 1 }, uniqueness: true
+    has_many :meals
 end
