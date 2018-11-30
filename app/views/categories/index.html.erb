@@ -4,14 +4,7 @@
 			<div><p class="backoff">Backoffice</p></div>
 			<div><span id="decoracao">Gerencie pedidos,refeições e mais</span></div>
     </div>
-    <div class="bar">
-			<div class="nav">
-				    <a class="buttont" id="opcao" href="#">Pedidos</span></a>
-				    <a class="buttont" id="opcao" href="#">Usuários</a>
-				    <a class="buttont" id="opcao" href="#">Refeições</a>
-				    <a class="buttont" id="current" href="#">Categorias de Refeição</a>
-				  </div>
-			</div>
+			<%= render 'layouts/backofficeBar'%>
       <div class="perf" >
 
 		<div class="centro" >
@@ -35,7 +28,7 @@
           <% end %>
         </tbody>
 
-          <div class="pad2"><%= button_to "Nova Categoria", new_category_path,class:"add", :method => "get" %></div>
+          <div class="pad2"><%= link_to "Nova Categoria", new_category_path ,class:"btn btn-success col-md-2"%></div>
       </div>
 
   </div>
