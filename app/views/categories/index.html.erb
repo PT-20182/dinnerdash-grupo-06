@@ -1,0 +1,34 @@
+<%= image_tag("backoffice.jpg", :alt => "backoffice", :class => "tamanho") %>
+		<div class="titulo">
+
+			<div><p class="backoff">Backoffice</p></div>
+			<div><span id="decoracao">Gerencie pedidos,refeições e mais</span></div>
+    </div>
+			<%= render 'layouts/backofficeBar'%>
+      <div class="perf" >
+
+		<div class="centro" >
+		<table class="tabela">
+		<thead class="head">
+		<tr class="tr" align="center">
+			<th>Nome</th>
+			<th>Número de Refeições</th>
+			<th>Cadastrada em</th>
+			<th colspan="3"></th>
+		</tr>
+        </thead>
+        <tbody>
+          <% @categories.each do |category| %>
+            <tr>
+              <td><%= link_to category.name, category_path(category),class: "normal" %></td>
+              <td><%=%></td>
+              <td><div ><%= category.created_at.strftime("%d/%m/%Y") %></div></td>
+              <td><div><%= button_to 'Editar', edit_category_path(category), method: 'get',class: "Edit"%></div></td>
+              <td><div><%= button_to 'Remover', category_path(category), method: 'delete', data: { confirm: 'Deseja Mesmo Excluir ?' },class: "Del"%></div></td>
+          <% end %>
+        </tbody>
+
+          <div class="pad2"><%= link_to "Nova Categoria", new_category_path ,class:"btn btn-success col-md-2"%></div>
+      </div>
+
+  </div>

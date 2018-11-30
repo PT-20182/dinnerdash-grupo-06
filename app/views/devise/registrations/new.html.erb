@@ -1,29 +1,50 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+		<%= image_tag("dinner.jpg", :alt => "Dinner", :class => "tamanho") %>
+		<div class="log">
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+			<div class="titulo"><h1 id="title"> Dinnerdash</h1></div>
+			<div class="pad">
+			    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+	</div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+			<div class="pad">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+			</div>
+				<div class="pad">
+          <p>Email</p>
+          <div><%= f.email_field :email, autofocus: true, autocomplete: "email",  :id=>"email"  %></div>
+        </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+        <div class="pad">
+          <% if @minimum_password_length %>
+          <% end %>
+          <p>Senha</p>
+					<div> <%= f.password_field :password, autocomplete: "new-password", :id=>"password"  %></div>
+				</div>
 
-<%= render "devise/shared/links" %>
+      <div class="pad">
+        <p>Confirme sua senha</p>
+				<div><%= f.password_field :password_confirmation, autocomplete: "new-password", :id=>"password_confirmation" %></div>
+				</div>
+
+        <div class="pad1">
+					<div><input class="button" type="submit" <%= f.submit "Cadastrar-se" %></div>
+				</div>
+
+
+        <% end %>
+			<div class="linha"></div>
+			<div class="pad1"><span id="bold">Já possui conta?</span></div>
+			<div class="pad1">
+			<%=button_to "Sign-up", new_user_session_path,class: "buttonc",:method => "get" %>
+		</div>
+	</div>
+
+</div>
