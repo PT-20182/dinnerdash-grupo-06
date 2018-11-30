@@ -6,7 +6,7 @@
     font-size: 13px;
     color: #7f7f7f;
     background-color: #fafafa;
-    padding: 35px 80px;
+    padding: 30px 80px;
 }
 
 //linhas com 2 caixinhas de submits
@@ -27,19 +27,18 @@
     border: 1px solid #d3d8d4;
     color: #7f7f7f;
     border-radius: 3px;
-}   
+}
 
 // botao verde de atualizar
-.button {
-    height: 35px;
-    width: 350px;
-    font-size: 14px;
-    border: 1px solid #129e32;
-    color: white;
-    background-color: #28a745;
-    border-radius: 3px;
+.buttonf {
+  padding :1.6%;
+	border-radius: 5px;
+	border:solid 1px #39cc6c;
+	background-color: #39cc6c;
+	width: 100%;
 }
- 
+
+
 // para as mensagens de alert
 .alert {
     margin-bottom: 0 !important;
