@@ -1,3 +1,85 @@
-// Place all the styles related to the meals controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.folder
+{
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+  padding: 3%;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: white;
+  position: relative;
+  bottom: 0;
+}
+.btn
+{
+  color:white;
+}
+#price
+{
+  color: green;
+  font-size: 1.8em;
+}
+#nome-meal
+{
+  font-size: 1.9em;
+}
+.text-muted span
+{
+  color: green;
+}
+.imagem
+{
+  width: 100%;
+  height: 90vh;
+  position: fixed;
+  top: 0;
+  z-index: -3;
+  display: flex;
+}
+.pad4
+{
+  width: 50%;
+  background-color: white;
+}
+.buttonMeals
+{
+  margin-left: 14%;
+	padding :0.5%;
+	border-radius: 5px;
+	border:solid 1px #39cc6c;
+	background-color: #39cc6c;
+	width: 20%;
+}
+.buttonMeals:hover
+{
+  cursor: pointer;
+  color:white;
+}
+#none
+{
+  text-decoration: none;
+  height: 3%;
+  margin: 2%;
+}
+#none:hover
+{
+  color: white;
+}
+btn
+{
+  color: black;
+}
+#back
+{
+  text-decoration: none;
+  position: absolute;
+  left: 40%;
+  bottom: 3.7%;
+  color: black;
+}
+#back:hover
+{
+  color: white;
+}

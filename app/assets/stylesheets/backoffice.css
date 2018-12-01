@@ -4,46 +4,15 @@
 	font-weight: normal;
 }
 
-.tamanho
-{
-	width: 100%;
-	height: 100vh;
-}
-.back
-{
-	display: flex;
-	width: 100%;
-	height: 100vh;
-}
 .perf
 {
-	background-color: white;
+	background-color: black;
 	position: absolute;
 	top:	60vh;
 	width: 100%;
 	height: 40vh;
 }
-.bar
-{
-	display: flex;
-	flex-direction: row;
-	position: absolute;
-	top:55vh;
-	background-color: #303031;
-	width: 100%;
-	height: 10%;
-}
-footer
-{
-	padding-left: 0.3em;
-	padding-top: 1.5em;
-	position: fixed;
-	bottom: 0%;
-	background-color: #DEE2E6;
-	width: 100%;
-	height: 6vh;
 
-}
 
 .normal
 {
@@ -62,13 +31,15 @@ footer
 }
 
 
-.centro
+.centroc
 {
 	display: flex;
 	flex-direction: column;
-	margin-top: 0em;
 	width: 100%;
 	height: 100%;
+	padding-top: 0px;
+	margin: 0px;
+	background-color: white;
 }
 
 .tabela{
@@ -81,7 +52,13 @@ footer
 	margin-top: 1%;
 	padding-bottom: 2%;
 	align-self:center;
-	order: -1;
+	order: 1;
+}
+#barra
+{
+	order: 0;
+	top: 0px;
+	position: static;
 }
 .body{}
 .head{
@@ -182,7 +159,7 @@ footer span
 {
 	color: #DEE2E6;
 }
-.buttontt:hover
+.buttontf:hover
 {
 	text-decoration: none;
 }
@@ -231,23 +208,15 @@ footer span
 	padding-right:15px;
 	color:#FAFAFA;
 }
-#currentt
-{
-	color: #FDDF4C;
-}
-.buttont:hover
+
+.nav-link:hover
 {
 	text-decoration: none;
+	background-color: none;
+	color:white;
 }
-#currentt:hover
-{
-	color: #FDDF4C;
-}
-#opcaot:hover
-{
-	color:  #FAFAFA;
 
-}
+
 .backoff
 {
 	font-family: sans-serif;
@@ -284,9 +253,10 @@ footer span
 }
 .pad3
 {
-	margin-left: 10%;
-	margin-bottom: 5%;
+	margin-left: 12.5%;
+	margin-bottom: 3%;
 	padding-top: 2.5%;
+		order: 3;
 }
 .pad3 p
 {

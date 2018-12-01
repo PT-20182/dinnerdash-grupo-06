@@ -1,37 +1,27 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Meals</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Image</th>
-      <th>Available</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= image_tag("backoffice.jpg", :alt => "backoffice", :class => "imagem") %>
+<%= render 'layouts/backofficeBar'%>
 
-  <tbody>
+<div class="folder" align="center">
     <% @meals.each do |meal| %>
-      <tr>
-        <td><%= meal.name %></td>
-        <td><%= meal.description %></td>
-        <td><%= meal.price %></td>
-        <td><%= meal.image %></td>
-        <td><%= meal.available %></td>
-        <td><%= meal.category.name %></td>
-        <td><%= link_to 'Show', meal %></td>
-        <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
-        <td><%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="card-deck">
+      <div class="p">
+        <div class="card " id="padding" style="width: 16rem;">
+              <%= image_tag("backoffice.jpg", :alt => meal.image, :class => "card-img-top") %>
+              <div class="card-body">
+              <h5 class="card-title" id="nome-meal"><%= meal.name %></h5>
+              <p class="card-text"><small class="text-muted"><%= meal.description %></small></p>
+              <p class="card-text"><small class="text-muted"><span id="price">R$:<%= meal.price %></span></small></p>
+              <%= link_to 'Edite', edit_meal_path(meal),class: "btn btn-warning btn-block"%>
+              <%= link_to 'Delete', meal, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger btn-block" %>
+            </div>
+          </div>
+        </div>
+    </div>
+<% end %>
 
-<br>
-
-<%= link_to 'New Meal', new_meal_path %>
+ </div>
+ <div class="pad4">
+<div class="pad3"><%= link_to "Nova refeiçao", new_meal_path ,class:"btn btn-success col-md-2"%></div>
+</div>

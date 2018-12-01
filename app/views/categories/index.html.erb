@@ -5,10 +5,11 @@
 			<div><p class="backoff">Backoffice</p></div>
 			<div><span id="decoracao">Gerencie pedidos,refeições e mais</span></div>
     </div>
-			<%= render 'layouts/backofficeBar'%>
+
       <div class="perf" >
 
-		<div class="centro" >
+		<div class="centroc" >
+<%= render 'layouts/backofficeBar'%>
 		<table class="tabela">
 		<thead class="head">
 		<tr class="tr" align="center">
@@ -29,7 +30,7 @@
           <% end %>
         </tbody>
 
-          <div class="pad2"><%= link_to "Nova Categoria", new_category_path ,class:"btn btn-success col-md-2"%></div>
+          <div class="pad3"><%= link_to "Nova Categoria", new_category_path ,class:"btn btn-success col-md-2"%></div>
       </div>
 
   </div>

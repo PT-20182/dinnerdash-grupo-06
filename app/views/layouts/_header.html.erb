@@ -1,9 +1,12 @@
+
 <% if current_page?(root_path) %>
     <div class="header-home">
 <% elsif controller_name == 'registrations' %>
     <div class="header-perfil">
 <% end %>
-<% if user_signed_in? | current_page?(root_path)%>
+<% if controller_name == 'categories'%>
+<% else %>
+<% if user_signed_in? | current_page?(root_path) %>
         <div class="top-box">
             <div class="left-box">
                 dinnerdash
@@ -39,4 +42,5 @@
             </div>
         </div>
     </div>
+        <% end %>
         <% end %>

@@ -11,37 +11,51 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="row">
+    <div class="col" style="width: 90rem;">
+        <%= form.label :name%>
+          <%= form.text_field :name,class:"form-control" %>
+    </div>
+    <div class="col">
+          <%= form.label :category_id %>
+      <select class="form-control" <%= form.collection_select(:category_id, Category.all, :id, :name, prompt: true) %></select>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+  <div class="form-group" >
+
+      <%= form.label :description %>
+       <textarea class="form-control" aria-label="With textarea" <%= form.text_field :description,class:"form-control"%> </textarea>
+
   </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
+  <div class="row">
+    <div class="col" style="width: 90rem;">
+          <%= form.label :price %>
+          <%= form.text_field :price ,class:"form-control" %>
+    </div>
+    <div class="col">
+      <%= form.label :image %>
+      <%= form.text_field :image,class:"form-control"  %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image %>
+  <div class="col-p-0" style="width: 50.7rem;">
+        <%= form.label :available %>
+    <select class="form-control" <%= form.select(:available, ['Sim','Não'], {include_blank: false}) %></select>
+  </div>
+</div>
+
+<div class="row" style="width: 50.7rem;">
+  <div class="pad">
+    <div class="actions" style="width: 15rem;">
+  <%= form.submit "Atualizar Refeicoes",class:"button" %>
   </div>
 
-  <div class="field">
-    <%= form.label :available %>
-    <%= form.select(:available, ['Sim','Não'], {include_blank: false}) %>
   </div>
+    <div class="pad">
 
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.collection_select(:category_id, Category.all, :id, :name, prompt: true) %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    </div>
+    <%= link_to "Voltar", @meal,class:"btn btn-secondary",id:"none"%>
+</div>
 <% end %>

@@ -1,19 +1,20 @@
+<div class="back">
 <%= image_tag("backoffice.jpg", :alt => "backoffice", :class => "tamanho") %>
 		<div class="titulo">
 
 			<div><p class="backoff">Backoffice</p></div>
 			<div><span id="decoracao">Gerencie pedidos,refeições e mais</span></div>
     </div>
-		<%= render 'layouts/backofficeBar'%>
       <div class="perf" >
 
-		<div class="centro" >
+		<div class="centroc" >
+			<%= render 'layouts/backofficeBar'%>
       <div class="pad3">
         <%= form_with model: @category do |form| %>
         <p>Crie uma categoria</p>
         <%= form.text_field :name, placeholder: "name",autofocus: true,class: "holder"  %>
       </div>
-      <div class="pad">
+      <div class="pad3">
         <%= link_to "Nova Categoria", categories_path ,class:"btn btn-success col-md-2"%>
       </div>
 <% end %>
