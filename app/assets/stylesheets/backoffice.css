@@ -52,7 +52,7 @@
 	margin-top: 1%;
 	padding-bottom: 2%;
 	align-self:center;
-	order: 1;
+	order: -1;
 }
 #barra
 {
@@ -253,10 +253,9 @@ footer span
 }
 .pad3
 {
-	margin-left: 12.5%;
-	margin-bottom: 3%;
-	padding-top: 2.5%;
-		order: 3;
+	width: 50%;
+  background-color: white;
+	margin-left: 5%;
 }
 .pad3 p
 {
