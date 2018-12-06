@@ -7,6 +7,39 @@
     <%= stylesheet_link_tag "header" %>
   </head>
 
-  <body>
+  <body>  
+      <div class="home-categories-box">
+          <% @categories.each do |category| %>
+            <span class="category-name"><%= category.name %></span> 
+            <div class="category-box">
+              <% @meals.where(:category_id => category.id).each do |meal| %>
+                <div class="meal-box">    
+                  <div class="meal-image">
+                    <div class="meal-name">
+                    <span><%= meal.name %><span>
+                    </div>                  
+                  </div>
+                  <div class="meal-info">
+                    <div class="descricao">
+                      <%= meal.description %>
+                    </div>
+                    <span class="preco">R$ <%= sprintf("%.2f", meal.price).gsub '.',',' %> por porção</span>
+                    <div class="quantity-box">
+                      <span class="quantidade">Quantidade</span>
+                      <select class="selector-meal">  
+                        <option selected>1</option>
+                        <% (2..100).each do |number| %>
+                        <option value="<%=number%>"><%=number%></option>
+                        <% end %>
+                      </select>
+                      <button type="button" class="button-meal">adicionar ao meu prato</button>
+                    </div>
+                  </div>
+                </div>
+
+              <% end %>
+            </div>
+          <% end %>     
+      </div>
   </body>
 </html>
