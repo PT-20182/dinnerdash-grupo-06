@@ -35,8 +35,7 @@
           <%= form.text_field :price ,class:"form-control" %>
     </div>
     <div class="col">
-      <%= form.label :image %>
-      <%= form.text_field :image,class:"form-control"  %>
+      <div class="marginss"><%= form.file_field :image, accept: 'image/png,image/jpeg' %></div>
     </div>
   </div>
 
@@ -44,9 +43,8 @@
         <%= form.label :available %>
     <select class="form-control" <%= form.select(:available, ['Sim','Não'], {include_blank: false}) %></select>
   </div>
-</div>
 
-<div class="row" style="width: 50.7rem;">
+<div class="row" style="width: 50.7rem;" id="topmargin">
   <div class="pad">
     <div class="actions" style="width: 15rem;">
   <%= form.submit "Atualizar Refeicoes",class:"button" %>
@@ -54,7 +52,6 @@
 
   </div>
     <div class="pad">
-
     </div>
     <%= link_to "Voltar", meals_path,class:"btn btn-secondary",id:"none"%>
 </div>
