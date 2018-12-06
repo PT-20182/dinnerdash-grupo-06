@@ -1,8 +1,10 @@
+
 <% if current_page?(root_path) %>
     <div class="header-home">
 <% elsif controller_name == 'registrations' %>
     <div class="header-perfil">
 <% end %>
+
         <div class="top-box"> 
             <div>
                 <%= link_to('dinnerdash', root_path, class: 'dinnerdash') %>
@@ -14,17 +16,17 @@
         <% end %>
                 <% if user_signed_in? %>
                     <%= link_to('perfil', edit_user_registration_path, class:'link') %>
-                    <%= link_to('sair', destroy_user_session_path, method: :delete, class: 'link')%> 
+                    <%= link_to('sair', destroy_user_session_path, method: :delete, class: 'link')%>
                 <% else %>
-                    <%= link_to('entrar', user_session_path, class: 'link')%> 
-                    <%= link_to('cadastro', new_user_registration_path, class: 'link')%> 
+                    <%= link_to('entrar', user_session_path, class: 'link')%>
+                    <%= link_to('cadastro', new_user_registration_path, class: 'link')%>
                 <% end %>
             </div>
         </div>
         <div class="bottom-box">
             <div class="big-bottom-box">
                 <% if current_page?(root_path) %>
-                    Monte o seu prato       
+                    Monte o seu prato
                 <% elsif controller_name == 'registrations'%>
                     Seu perfil
                 <% end %>

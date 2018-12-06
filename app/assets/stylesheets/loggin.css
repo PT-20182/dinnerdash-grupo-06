@@ -12,7 +12,7 @@ h1
 .tamanho
 {
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 }
 
 .back
@@ -32,8 +32,8 @@ h1
 .titulo
 {
 	margin-left: 13%;
-	margin-bottom: 10%;
-	margin-top: 11%;
+	margin-bottom: 9%;
+	margin-top: 9.5%;
 }
 
 #nome
@@ -86,15 +86,16 @@ h1
 {
 	padding :3%;
 	border-radius: 5px;
-	border:solid 2px #39cc6c;
+	border:solid 1px #39cc6c;
 	background-color: #39cc6c;
 	width: 100%;
 }
 
+
 .button:hover
 {
 	padding :3%;
-	border:solid 2px green;
+	border:solid 1px green;
 	border-radius: 5px;
 	background-color: white;
 	cursor: pointer;
@@ -140,4 +141,7 @@ h1
 #title
 {
 	font-size: 50px;
+}
+#font {
+	font-size: 2em;
 }

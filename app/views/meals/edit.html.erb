@@ -1,6 +1,9 @@
-<h1>Editing Meal</h1>
+<%= image_tag("backoffice.jpg", :alt => "backoffice", :class => "imagem") %>
+<%= render 'layouts/backofficeBar'%>
+
+<div class="folder">
 
 <%= render 'form', meal: @meal %>
 
-<%= link_to 'Show', @meal %> |
-<%= link_to 'Back', meals_path %>
+<%= link_to 'Show', @meal,class:"btn btn-secondary",id:"back" %> 
+ </div>
