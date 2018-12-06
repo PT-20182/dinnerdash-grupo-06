@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 2018_11_30_114743) do
     t.string "name"
     t.string "description"
     t.float "price"
-    t.binary "image"
     t.string "available"
     t.string "category"
     t.bigint "category_id"
