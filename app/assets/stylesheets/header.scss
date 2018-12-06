@@ -33,10 +33,16 @@ body {
 
 // logo dinnerdash
 @import url('https://fonts.googleapis.com/css?family=Amaranth');
-.left-box {
+.dinnerdash {
+    text-decoration: none;
     color: white;
-    font-family: 'Amaranth', sans-serif;
+    font-family: 'Amaranth', sans-serif !important; 
     font-size: 24px;
+}
+
+.dinnerdash:hover {
+    text-decoration: none;
+    color: white;
 }
 
 // coisinhas escritas no canto direito
