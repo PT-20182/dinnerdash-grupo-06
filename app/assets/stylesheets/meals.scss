@@ -3,14 +3,30 @@
 {
   display: flex;
   flex-direction: row;
-  height: 55vh;
+  height: 6%;
+  padding: 2%;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: white;
+  position: inherit;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+}
+.folder_fixed
+{
+  display: flex;
+  flex-direction: row;
+  height: 60%;
   padding: 3%;
   flex-wrap: wrap;
   flex-flow: row wrap;
   justify-content: space-around;
   background-color: white;
-  position: relative;
-  bottom: 0;
+  position: absolute;
+  z-index: 0;
+  width: 100%;
 }
 .btn
 {

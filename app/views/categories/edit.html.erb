@@ -1,14 +1,14 @@
 
 <%= image_tag("backoffice.jpg", :alt => "backoffice", :class => "imagem") %>
 <%= render 'layouts/backofficeBar'%>
-<div class="folder" align="center">
+<div class="folder_fixed">
       <div class="pad3">
       <%= form_with model: @category do |form| %>
       <p>Edite a categoria</p>
       <%= form.text_field :name, autofocus: true, placeholder: "name",class: "holder" %>
     </div>
       <% end %>
-    </div>
-		<div class="pad6">
-      <%= link_to "Editar Categoria", categories_path ,class:"btn btn-success col-md-2"%>
+      <div class="pad3">
+        <%= link_to "Editar Categoria", categories_path ,class:"btn btn-success col-md-2"%>
+      </div>
     </div>

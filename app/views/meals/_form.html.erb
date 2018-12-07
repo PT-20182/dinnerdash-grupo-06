@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="row">
-    <div class="col" style="width: 90rem;">
-        <%= form.label :name%>
+    <div class="col" style="width: 100%;">
+        <%= form.label "Nome"%>
           <%= form.text_field :name,class:"form-control" %>
     </div>
     <div class="col">
@@ -23,36 +23,39 @@
   </div>
 
   <div class="form-group" >
-
-      <%= form.label :description %>
+          <br>
+      <%= form.label "descricão" %>
        <textarea class="form-control" aria-label="With textarea" <%= form.text_field :description,class:"form-control"%> </textarea>
-
   </div>
 
   <div class="row">
-    <div class="col" style="width: 90rem;">
-          <%= form.label :price %>
+    <div class="col" style="width: 80em;">
+          <%= form.label "Preço" %>
           <%= form.text_field :price ,class:"form-control" %>
+          <br>
     </div>
     <div class="col">
-      <div class="marginss"><%= form.file_field :image, accept: 'image/png,image/jpeg' %></div>
+      <%= form.label "Foto" %>
+      <br>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="validatedCustomFile" required <%= form.file_field :image, accept: 'image/png,image/jpeg' %>
+        <label class="custom-file-label" for="validatedCustomFile">Escolher arquivo...</label>
+        <div class="invalid-feedback">Example invalid custom file feedback</div>
+    </div>
+
     </div>
   </div>
 
-  <div class="col-p-0" style="width: 50.7rem;">
-        <%= form.label :available %>
-    <select class="form-control" <%= form.select(:available, ['Sim','Não'], {include_blank: false}) %></select>
+  <div class="col-p-0" style="width: 48.8%;">
+
+    <label class="form-check-label" <%= form.check_box :available %></label>
+    <%= form.label "Está disponível no cardápio." %>
   </div>
 
-<div class="row" style="width: 50.7rem;" id="topmargin">
-  <div class="pad">
-    <div class="actions" style="width: 15rem;">
-  <%= form.submit "Atualizar Refeicoes",class:"button" %>
+<div class="row" id="topmargin">
+  <div class="col" id="nopad">
+        <%= form.submit "Atualizar Refeicoes",class:"btn btn-success col-md-2" %>
+      <%= link_to "Voltar", meals_path,class:"btn btn-secondary col-md-2"%>
   </div>
-
-  </div>
-    <div class="pad">
-    </div>
-    <%= link_to "Voltar", meals_path,class:"btn btn-secondary",id:"none"%>
 </div>
 <% end %>

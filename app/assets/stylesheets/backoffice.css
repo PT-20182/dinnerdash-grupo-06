@@ -253,18 +253,38 @@ footer span
 }
 .pad3
 {
-	width: 50%;
+	width: 100vw;
   background-color: white;
-	margin-left: 5%;
+	margin-left: 13%;
 	margin-top: 5%;
 }
 .pad3 p
 {
-	font-size: 2em;
+	font-size: 1.5em;
 }
+
+.pad7
+{
+	position: sticky;
+	width: 100vw;
+  background-color: white;
+	margin-left: 5.4%;
+	margin-top: 3%;
+}
+.pad7 p
+{
+	font-size: 1.5em;
+}
+
 .pad6
 {
-	margin-left: 5%;
+	padding: 2%;
+	background-color: white;
+	width: 100vh;
+	bottom:0;
+
+	position: sticky;
+	margin-right: 0;
 }
 #navbarNav a
 {
@@ -275,4 +295,18 @@ footer span
 {
 	text-decoration: none;
 	color: white;
+}
+#margin
+{
+	margin-bottom: 2%;
+	padding: 1%;
+	padding-left: 5.5%;
+	align-items: center;
+	align-content: flex-start;
+}
+.meal-card {
+    height: 410px;
+    width: 275px;
+		margin-right: 1%;
+		margin-bottom: 2%;
 }
