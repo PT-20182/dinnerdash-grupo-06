@@ -15,20 +15,23 @@
               <% @meals.where(:category_id => category.id).each do |meal| %>
                 <div class="meal-box">    
                   <div class="meal-image">
-                    <div class="meal-name">
+                    <% if meal.image != nil %>
+                      <%= image_tag(meal.image) %>
+                    <% end %>
+                    <!--<div class="meal-name">
                     <span><%= meal.name %><span>
-                    </div>                  
+                    </div>-->                  
                   </div>
                   <div class="meal-info">
                     <div class="descricao">
                       <%= meal.description %>
                     </div>
                     <span class="preco">R$ <%= sprintf("%.2f", meal.price).gsub '.',',' %> por porção</span>
-                    <div class="quantity-box">
+                    <div class="quantity-box form-group">
                       <span class="quantidade">Quantidade</span>
-                      <select class="selector-meal">  
+                      <select class="selector-meal form-control">  
                         <option selected>1</option>
-                        <% (2..100).each do |number| %>
+                        <% (2..10).each do |number| %>
                         <option value="<%=number%>"><%=number%></option>
                         <% end %>
                       </select>
