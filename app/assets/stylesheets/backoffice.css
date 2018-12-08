@@ -256,8 +256,23 @@ footer span
 	width: 50%;
   background-color: white;
 	margin-left: 5%;
+	margin-top: 5%;
 }
 .pad3 p
 {
 	font-size: 2em;
+}
+.pad6
+{
+	margin-left: 5%;
+}
+#navbarNav a
+{
+	text-decoration: none;
+	color: gray;
+}
+#navbarNav a:hover
+{
+	text-decoration: none;
+	color: white;
 }

@@ -18,3 +18,4 @@ molho_branco = Meal.create(name: 'Molho Branco', description: 'Possui branco', p
 vinho = Meal.create(name: 'Vinho Tinto', description: 'Possui uvas e pes franceses', price: 65.89, available: 'sim', category: bebida); 
 batata_frita = Meal.create(name: 'Batata Frita', description: 'Possui batata e oleo velho', price: 15.80, available: 'sim', category: guarnicao); 
 salada_de_abacaxi = Meal.create(name: 'Strogonoff de Frango', description: 'Possui frango e molho desconhecido', price: 78.56, available: 'sim', category: prato); 
+

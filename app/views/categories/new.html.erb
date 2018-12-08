@@ -2,13 +2,13 @@
 <%= image_tag("backoffice.jpg", :alt => "backoffice", :class => "imagem") %>
 <%= render 'layouts/backofficeBar'%>
 <div class="folder" align="center">
-      <div class="pad4">
+      <div class="pad3">
         <%= form_with model: @category do |form| %>
         <p>Crie uma categoria</p>
         <%= form.text_field :name, placeholder: "name",autofocus: true,class: "holder"  %>
       </div>
 			</div>
 <% end %>
-<div class="pad3">
+<div class="pad6">
 	<%= link_to "Nova Categoria", categories_path ,class:"btn btn-success col-md-2"%>
 </div>
