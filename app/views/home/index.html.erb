@@ -7,21 +7,19 @@
     <%= stylesheet_link_tag "header" %>
   </head>
 
-  <body>  
+  <body>
       <div class="home-categories-box">
           <% @categories.each do |category| %>
-            <span class="category-name"><%= category.name %></span> 
+            <span class="category-name"><%= category.name %></span>
             <div class="category-box">
               <% @meals.where(:category_id => category.id).each do |meal| %>
-                <div class="meal-box">    
-                  <div class="meal-image">
-                    <% if meal.image != nil %>
-                      <%= image_tag(meal.image) %>
-                    <% end %>
-                    <!--<div class="meal-name">
+
+              <div class="meal-box" id="p">
+                <div class="meal-image" style="background-image: url(<%= rails_blob_url(meal.image) %>)">
+                  <div class="meal-name" align="center">
                     <span><%= meal.name %><span>
-                    </div>-->                  
                   </div>
+                </div>
                   <div class="meal-info">
                     <div class="descricao">
                       <%= meal.description %>
@@ -30,6 +28,7 @@
                     <div class="quantity-box form-group">
                       <span class="quantidade">Quantidade</span>
                       <select class="selector-meal form-control">  
+
                         <option selected>1</option>
                         <% (2..10).each do |number| %>
                         <option value="<%=number%>"><%=number%></option>
@@ -42,7 +41,7 @@
 
               <% end %>
             </div>
-          <% end %>     
+          <% end %>
       </div>
   </body>
 </html>

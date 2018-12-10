@@ -1,24 +1,29 @@
 <%= render 'layouts/backofficeBar'%>
 
 <div class="folder" align="center">
-    <% @meals.each do |meal| %>
     <div class="card-deck">
-      <div class="p">
-        <div class="card " id="padding" style="width: 16rem;">
-              <%= image_tag("backoffice.jpg", :alt => meal.image, :class => "card-img-top") %>
-              <div class="card-body">
-              <h5 class="card-title" id="nome-meal"><%= meal.name %></h5>
-              <p class="card-text"><small class="text-muted"><%= meal.description %></small></p>
-              <p class="card-text"><small class="text-muted"><span id="price">R$:<%= meal.price %></span></small></p>
-              <%= link_to 'Edite', edit_meal_path(meal),class: "btn btn-warning btn-block"%>
-              <%= link_to 'Delete', meal, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger btn-block" %>
-            </div>
+      <% @meals.each do |meal| %>
+      <div class="meal-box" id="p">
+        <div class="meal-image" style="background-image: url(<%= rails_blob_url(meal.image) %>)">
+          <div class="meal-name" align="center">
+            <span><%= meal.name %><span>
           </div>
         </div>
+        <div class="meal-info">
+          <div class="descricao">
+            <%= meal.description %>
+          </div>
+          <span class="preco">R$ <%= sprintf("%.2f", meal.price).gsub '.',',' %> por porção</span>
+          <div class="quantity-box">
+            <%= link_to 'Edite', edit_meal_path(meal),class: "btn btn-warning btn-block"%>
+            <%= link_to 'Delete', meal, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger btn-block" %>
+          </div>
+        </div>
+      </div>
+      <% end %>
     </div>
-<% end %>
+</div>
 
- </div>
- <div class="pad3">
+ <div class="buttomPad">
 <%= link_to "Nova refeiçao", new_meal_path ,class:"btn btn-success col-md-2"%>
 </div>
