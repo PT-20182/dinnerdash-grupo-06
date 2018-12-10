@@ -109,7 +109,7 @@ h1
 
 .linha
 {
-	margin-top:8.8%;
+	margin-top:0%;
 	border-top: solid 2px #a0a0a0;
 	margin-left: 10%;
 	margin-right: 10%;
@@ -117,7 +117,7 @@ h1
 
 .linhaback
 {
-	margin-top:2%;
+	margin-top:1%;
 	border-top: solid 2px #a0a0a0;
 	width: 96%;
 	display: flex;
@@ -158,5 +158,11 @@ h1
 }
 .padleft
 {
-	padding-left: 2.5%;
+	padding-left: 1.9%;
+}
+.margleft
+{
+	width: 3%;
+	margin: 0%;
+	height: 3%;
 }

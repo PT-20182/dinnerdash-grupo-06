@@ -25,7 +25,6 @@ class MealsController < ApplicationController
   # POST /meals.json
   def create
     @meal = Meal.new(meal_params)
-
     respond_to do |format|
       if @meal.save
         format.html { redirect_to @meal, notice: 'Meal was successfully created.' }
@@ -61,6 +60,7 @@ class MealsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meal
@@ -70,5 +70,7 @@ class MealsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def meal_params
       params.require(:meal).permit(:name, :description, :price, :image, :available, :category_id)
+
     end
+
 end
