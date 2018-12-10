@@ -13,6 +13,7 @@
             <span class="category-name"><%= category.name %></span>
             <div class="category-box">
               <% @meals.where(:category_id => category.id).each do |meal| %>
+
               <div class="meal-box" id="p">
                 <div class="meal-image" style="background-image: url(<%= rails_blob_url(meal.image) %>)">
                   <div class="meal-name" align="center">
@@ -23,12 +24,13 @@
                     <div class="descricao">
                       <%= meal.description %>
                     </div>
-                    <span class="preco">R$ <%= meal.price %> por porção</span>
-                    <div class="quantity-box">
+                    <span class="preco">R$ <%= sprintf("%.2f", meal.price).gsub '.',',' %> por porção</span>
+                    <div class="quantity-box form-group">
                       <span class="quantidade">Quantidade</span>
-                      <select class="selector-meal">
+                      <select class="selector-meal form-control">  
+
                         <option selected>1</option>
-                        <% (2..100).each do |number| %>
+                        <% (2..10).each do |number| %>
                         <option value="<%=number%>"><%=number%></option>
                         <% end %>
                       </select>

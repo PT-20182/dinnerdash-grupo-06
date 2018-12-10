@@ -21,6 +21,12 @@ body {
     background-position: center;
 }
 
+.header-backoffice {
+    height: 60vh;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(backoffice.jpeg);
+    background-size: cover;
+    background-position: center;    
+}
 // div de cima com a logo dinnerdash e as outras palavrinhas no canto
 .top-box {
     height: 40px;
@@ -66,6 +72,15 @@ body {
     justify-content: space-between;
 }
 
+.rigth-box-backoffice {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+}
 // div das frases debaixo
 .bottom-box {
     display: flex;
@@ -96,4 +111,14 @@ body {
 .link:hover {
     text-decoration: none;
     color: white;
+}
+
+.link-backoffice {
+    text-decoration: none;
+    color: #C79506;
+}
+
+.link-backoffice:hover {
+    text-decoration: none;
+    color: #C79506;
 }

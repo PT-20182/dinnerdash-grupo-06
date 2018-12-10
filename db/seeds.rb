@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-admin = User.create(name: 'Larissa', email: 'lari@exemplo.com', password:'123456', password_confirmation: '123456', is_admin: true);
+larissa = User.create(name: 'Larissa', email: 'lari@exemplo.com', password:'123456', password_confirmation: '123456', is_admin: true);
+thiago = User.create(name: 'Thiago', email: 'titi@exemplo.com', password: '123456', password_confirmation: '123456', is_admin: false);
 salada = Category.create(name: 'Saladas');
 guarnicao = Category.create(name: 'Guarnições');
 bebida = Category.create(name: 'Bebidas');
@@ -18,4 +19,3 @@ molho_branco = Meal.create(name: 'Molho Branco', description: 'Possui branco', p
 vinho = Meal.create(name: 'Vinho Tinto', description: 'Possui uvas e pes franceses', price: 65.89, available: 'sim', category: bebida); 
 batata_frita = Meal.create(name: 'Batata Frita', description: 'Possui batata e oleo velho', price: 15.80, available: 'sim', category: guarnicao); 
 salada_de_abacaxi = Meal.create(name: 'Strogonoff de Frango', description: 'Possui frango e molho desconhecido', price: 78.56, available: 'sim', category: prato); 
-
