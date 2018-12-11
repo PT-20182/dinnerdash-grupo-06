@@ -31,6 +31,13 @@
         </button>
       </div>
     <% end %>
+
     <%= yield %>
+
+    <% if current_page?(new_user_registration_path) || (action_name == 'create' && controller_name == 'registrations') || controller_name == 'sessions' %>
+    <% else %>
+      <%= render "layouts/footer" %>
+    <% end %>
+    
   </body>
 </html>
