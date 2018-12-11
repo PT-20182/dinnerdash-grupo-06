@@ -2,7 +2,7 @@
 	<div class="back">
 		<%= image_tag("dinner.jpg", :alt => "Dinner", :class => "tamanho") %>
 		<div class="log">
-			<div class="titulo"><h1 id="title">Dinnerdash</h1></div>
+			<div class="titulo"><h1 > <%= link_to "Dinnerdash",root_path, id: "title" %> </h1></div>
 			<div class="pad">
 			    <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
@@ -33,7 +33,7 @@
 <% end %>
 
 			<div class="linha"></div>
-			<div class="pad"><span id="bold">Já possui conta?</span></div>
+			<div class="pad"><span id="bold">Não possui conta?</span></div>
 			<div class="pad">
 			<%=button_to "Sign-up", new_user_registration_path,class: "buttonc",:method => "get" %>
 		</div>

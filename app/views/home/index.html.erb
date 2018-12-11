@@ -14,7 +14,7 @@
             <div class="category-box">
               <% @meals.where(:category_id => category.id).each do |meal| %>
               <div class="meal-box" id="p">
-                <div class="meal-image" style="background-image: url(<%= rails_blob_url(meal.image) %>)">
+                <div class="meal-image" style="background-image: url(<%= image_meal(meal) %>)">
                   <div class="meal-name" align="center">
                     <span><%= meal.name %><span>
                   </div>
