@@ -1,0 +1,19 @@
+.grey-box {
+    height: 70px;
+    background-color: #f2f2f2;
+    border-top: 1px solid #dcdcdc;
+    color: #4b4b4b;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+}
+
+.big-text {
+    font-size: 18px;
+}
+
+.small-text {
+    font-size: 14px;
+}

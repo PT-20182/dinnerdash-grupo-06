@@ -17,7 +17,7 @@
 
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, class:'submit', autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, class:'submit', autofocus: true, autocomplete: "email", required: true %>
       </div>
 
       <!--<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -37,7 +37,7 @@
 
       <div class="field">
         <%= f.label "Senha Atual" %> <span>, por questão de segurança</span><br />
-        <%= f.password_field :current_password, class:'submit'%>
+        <%= f.password_field :current_password, class:'submit', required: true%>
       </div>
     </div>
 
