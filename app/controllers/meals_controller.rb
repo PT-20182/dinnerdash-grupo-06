@@ -30,7 +30,6 @@ class MealsController < ApplicationController
       if @meal.save
         format.html { redirect_to meals_path, notice: 'Meal was successfully created.' }
         format.json { render :show, status: :created, location: @meal }
-        redirect_to meals_path
       else
         format.html { render :new }
         format.json { render json: @meal.errors, status: :unprocessable_entity }
@@ -46,7 +45,6 @@ class MealsController < ApplicationController
       if @meal.update(meal_params)
         format.html { redirect_to meals_path, notice: 'Meal was successfully updated.' }
         format.json { render :show, status: :ok, location: @meal }
-        redirect_to meals_path
       else
         format.html { render :edit }
         format.json { render json: @meal.errors, status: :unprocessable_entity }
