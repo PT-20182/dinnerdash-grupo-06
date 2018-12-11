@@ -1,27 +1,28 @@
 <%= render 'layouts/backofficeBar'%>
-<div class="folder" align="center">
+
+<div class="folder_fixed">
 		<table class="tabela">
 		<thead class="head">
 		<tr class="tr">
 			<th>Nome</th>
-			<th>Número de Refeições</th>
-			<th>Cadastrada em</th>
+			<th class="p-0">Número de Refeições</th>
+			<th class="p-0">Cadastrada em</th>
 			<th colspan="3"></th>
-		</tr>
+</tr>
         </thead>
+				          <% @categories.each do |category| %>
         <tbody>
-          <% @categories.each do |category| %>
-            <tr>
-              <td><%= link_to category.name, category_path(category),class: "normal" %></td>
+
+              <td><%= link_to category.name, category_path(category),class: "normal gray" %></td>
               <td><%=%></td>
-              <td><div ><%= category.created_at.strftime("%d/%m/%Y") %></div></td>
-              <td><div><%= button_to 'Editar', edit_category_path(category), method: 'get',class: "Edit"%></div></td>
-              <td><div><%= button_to 'Remover', category_path(category), method: 'delete', data: { confirm: 'Deseja Mesmo Excluir ?' },class: "Del"%></div></td>
+              <td><div class="gray"><%= category.created_at.strftime("%d/%m/%Y") %></div></td>
+              <td><%= button_to 'Editar', edit_category_path(category), method: 'get',class: "Edit"%></td>
+              <td><%= button_to 'Excluir', category_path(category), method: 'delete', data: { confirm: 'Deseja Mesmo Excluir ?' },class: "Del"%></td>
 
         </tbody>
+<% end %>
+	</div>
 
-				  </div>
-					<% end %>
-					<div class="pad3">
-        <%= link_to "Nova Categoria", new_category_path ,class:"btn btn-success col-md-2"%>
+					<div class="pad8">
+        <%= link_to "nova categoria de refeição", new_category_path ,class:"btn btn-success col-md-2 btn-block"%>
 				</div>
