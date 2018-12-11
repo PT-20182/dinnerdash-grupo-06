@@ -19,7 +19,7 @@ class MealsController < ApplicationController
 
   # GET /meals/1/edit
   def edit
-    
+
   end
 
   # POST /meals
@@ -62,7 +62,6 @@ class MealsController < ApplicationController
       format.html { redirect_to meals_url, notice: 'Meal was successfully destroyed.' }
       format.json { head :no_content }
     end
-    redirect_to meals_path
   end
 
 
