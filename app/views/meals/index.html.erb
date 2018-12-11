@@ -2,10 +2,10 @@
 <%= render 'layouts/backofficeBar'%>
 
 <div class="folder">
-    <div class="card-group" id="margin">
+    <div class="card-group m-0" id="margin">
       <% @meals.each do |meal| %>
       <div class="meal-card" id="botmargin" >
-        <div class="meal-image" style="background-image: url(<%= rails_blob_url(meal.image) %>)">
+        <div class="meal-image" style="background-image: url(<%= image_meal(meal) %>)">
           <div class="meal-name" align="center">
             <span><%= meal.name %><span>
           </div>

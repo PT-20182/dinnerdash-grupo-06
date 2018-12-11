@@ -27,7 +27,7 @@ class MealsController < ApplicationController
     @meal = Meal.new(meal_params)
     respond_to do |format|
       if @meal.save
-        format.html { redirect_to @meal, notice: 'Meal was successfully created.' }
+        format.html { redirect_to meals_path, notice: 'Meal was successfully created.' }
         format.json { render :show, status: :created, location: @meal }
       else
         format.html { render :new }
@@ -41,13 +41,14 @@ class MealsController < ApplicationController
   def update
     respond_to do |format|
       if @meal.update(meal_params)
-        format.html { redirect_to @meal, notice: 'Meal was successfully updated.' }
+        format.html { redirect_to meals_path, notice: 'Meal was successfully updated.' }
         format.json { render :show, status: :ok, location: @meal }
       else
         format.html { render :edit }
         format.json { render json: @meal.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # DELETE /meals/1
