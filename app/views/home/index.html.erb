@@ -9,11 +9,12 @@
 
   <body>
       <div class="home-categories-box">
+      <!--Parte com os cards-->
           <% @categories.each do |category| %>
             <span class="category-name"><%= category.name %></span>
             <div class="category-box">
               <% @meals.where(:category_id => category.id).each do |meal| %>
-
+               <!-- Os propios cards -->
               <div class="meal-box" id="p">
                 <div class="meal-image" style="background-image: url(<%= rails_blob_url(meal.image) %>)">
                   <div class="meal-name" align="center">
@@ -25,23 +26,67 @@
                       <%= meal.description %>
                     </div>
                     <span class="preco">R$ <%= sprintf("%.2f", meal.price).gsub '.',',' %> por porção</span>
-                    <div class="quantity-box form-group">
-                      <span class="quantidade">Quantidade</span>
-                      <select class="selector-meal form-control">  
-
-                        <option selected>1</option>
-                        <% (2..10).each do |number| %>
-                        <option value="<%=number%>"><%=number%></option>
-                        <% end %>
-                      </select>
-                      <button type="button" class="button-meal">adicionar ao meu prato</button>
-                    </div>
+                    <%= form_for( @order_item , remote: true) do |f| %>
+                      <div class="quantity-box">
+                        <%= f.hidden_field :meal_id, value: meal.id %>
+                        <%= f.label :Quantidade, class: 'quantidade' %>
+                        <%= f.select  :quantity, (1..10) , {}, {class: 'selector-meal'} %>
+                        <%= f.submit "adicionar no carrinho", class: 'button-meal', data: { disable_with: false }%>
+                      </div>
+                    <% end %>
                   </div>
                 </div>
-
               <% end %>
             </div>
           <% end %>
       </div>
+      <!-- Parte "Finalizou pedido?" -->
+      <div class="cart-box">
+        <div class="cart-title">Finalizou o seu prato?</div>
+        <div class="cart-subtitle">Confira os itens pedidos antes de finalizar o pedido.</div>
+        <!-- cards horizontais do pedido-->
+        <div class="order-box"> 
+          <% @order.each do |item|%>
+          <div class="item-box">
+            <img src= "<%= rails_blob_url(item.meal.image) %>" class="item-image">
+            <div class="item-text"> 
+              <div class="item-name"><%= item.meal.name %></div>
+              <div class="item-info">
+                <span>Quantidade: <%= item.quantity %></span>
+                <span>Preço unitário: R$ <%= sprintf("%.2f", item.unit_price).gsub '.',',' %></span>
+                <span>Preço total: R$ <%= sprintf("%.2f", item.total_price).gsub '.',',' %></span>
+              </div>
+            </div>
+            <div class="item-form">
+              <%= form_for( item , remote: true) do |f| %>
+                <div class="item-options">
+                  <%= f.label :Quantidade, class: 'item-form-label' %>
+                  <%= f.select :quantity, (1..item.quantity),{},{class: 'selector-item'} %>
+                  <%= link_to "remover do meu prato", item, method: :delete, remote: true, class: 'button-item-delete' %>
+                </div>
+              <% end %>
+            </div>  
+          </div>  
+          <% end %>
+        </div> 
+      </div>
+      <!--preco-->
+      <div class="total-price-box">
+        <% if user_signed_in? %>
+          <div class="cart-title">Preço total do pedido: <span class="total-price-span">R$ <%= sprintf("%.2f", current_order.subtotal).gsub '.',',' %></span></div>
+          <div class="button-total-price-box">
+          <!--Botao falso por enquanto, tirar duvidas-->
+            <%= link_to('finalizar pedido', user_session_path, class: 'button-total-price-log-in')%>
+          </div>
+        <% else %>
+          <div class="cart-title">Preço total do pedido: <span class="total-price-span">R$ <%= sprintf("%.2f", current_order.subtotal).gsub '.',',' %></span></div>
+          <div class="cart-subtitle">Para finalizar o seu pedido, entre com sua conta ou faça o seu cadastro.</div>
+          <div class="button-total-price-box">
+            <%= link_to('entrar com sua conta', user_session_path, class: 'button-total-price-log-in')%>
+            <%= link_to('fazer o meu cadastro', new_user_registration_path, class: 'button-total-price-cadastro')%>
+          </div>
+        <% end %>
+      </div>
+      <%= render 'layouts/footer'%>
   </body>
 </html>

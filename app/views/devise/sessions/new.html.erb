@@ -18,7 +18,7 @@
 				</div>
 				<div class="pad">
 					<p>Senha</p>
-					<div> <input type="password" id="password" <%= f.password_field :password, autocomplete: "current-password" %></div>
+					<div> <input type="password" id="password" <%= f.password_field :password, autocomplete: "current-password", required: true %></div>
         </div>
 				<div class="pad">
   			<% if devise_mapping.rememberable? -%>
