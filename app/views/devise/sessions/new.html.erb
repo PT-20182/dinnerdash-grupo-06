@@ -14,11 +14,11 @@
 				<div class="pad">
 					<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 					<p>Email</p>
-					<div> <input type="text" id="email" <%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
+					<div> <input type="text" id="email" <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %></div>
 				</div>
 				<div class="pad">
 					<p>Senha</p>
-					<div> <input type="password" id="password" <%= f.password_field :password, autocomplete: "current-password" %></div>
+					<div> <input type="password" id="password" <%= f.password_field :password, autocomplete: "current-password", required: true %></div>
         </div>
 				<div class="pad">
   			<% if devise_mapping.rememberable? -%>
@@ -28,7 +28,7 @@
     </div>
 
 	<div class="pad1">
-    <%= f.submit "Log in", :class => "button"%>
+    <%= f.submit "Log in", class: "button"%>
   </div>
 <% end %>
 
