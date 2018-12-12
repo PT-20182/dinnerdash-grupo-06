@@ -15,6 +15,10 @@
       <%= render "layouts/header" %>
     <% end %>
 
+    <% if controller_name == 'categories' || controller_name == 'meals' || controller_name == 'backoffice_user' %>
+      <%= render "layouts/backofficeBar" %>
+    <% end %>
+
     <% if notice %>
       <div class="alert alert-success alert-dismissible fade show" role="alert">
        <strong><%= notice %></strong>

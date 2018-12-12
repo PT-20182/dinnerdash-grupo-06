@@ -1,0 +1,20 @@
+<div class="item-box" id="<%= item.id %>">
+    <img src= "<%= image_meal(item.meal) %>" class="item-image">
+    <div class="item-text"> 
+    <div class="item-name"><%= item.meal.name %></div>
+    <div class="item-info">
+        <span id="preco-<%= item.id %>">Quantidade: <%= item.quantity %></span>
+        <span>Preço unitário: R$ <span id="preco-unitario-<%= item.id %>"><%= sprintf("%.2f", item.unit_price).gsub '.',',' %></span></span>
+        <span id="preco-subtotal-<%= item.id %>">Preço total: R$ <%= sprintf("%.2f", item.total_price).gsub '.',',' %></span>
+    </div>
+    </div>
+    <div class="item-form">
+    <%= form_for( item , remote: true) do |f| %>
+        <div class="item-options">
+        <%= f.label :Quantidade, class: 'item-form-label' %>
+        <%= f.select :quantity, (1..10),{},{class: 'selector-item', id: item.id, meal_id: item.meal.id } %>
+        <%= link_to "remover do meu prato", item, method: :delete, remote: true, class: 'button-item-delete' %>
+        </div>
+    <% end %>
+    </div>  
+</div>

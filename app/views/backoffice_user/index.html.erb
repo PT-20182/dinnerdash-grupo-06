@@ -1,0 +1,29 @@
+<div class="table-box">
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Cadastrado em</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @users.each do |user| %>
+                <tr id="<%= user.id %>">
+                <td>
+                    <% if user.is_admin %>
+                        <span class="admin-box">admin</span>
+                    <% end %>
+                    <%= user.name %>
+                </td>
+                <td><%= user.email %> </td>
+                <td><%= user.created_at.strftime("%d/%m/%Y") %></td>
+                <td><%= link_to "editar", edit_backoffice_user_path(user), class: 'link-editar' %></td>
+                <td><%= link_to "excluir", backoffice_user_path(user.id) , method: :delete, data: {confirm: "Are you sure?"}, remote: true , class: 'link-excluir' %></td>
+                </tr>
+            <% end %>
+        </tbody>    
+    </table>
+</div>
