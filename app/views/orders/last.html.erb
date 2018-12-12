@@ -21,11 +21,11 @@
 </div>
 
 <div class="last-orders">
-  <div class="col p-0" id="align">
-  <h3 class="mt-5 mb-4 "id="noleft" style="width: 73.5%;">Pedidos anteriores</h3>
+  <div class="col" id="align">
+  <h3 class="mt-5 mb-4 "id="noleft">Pedidos anteriores</h3>
   <% if !current_user.nil? %>
-      <% if @orders.size>0 %>
-<table class="table" style="width: 73.5%;">
+      <% if @orders.size >0 %>
+<table class="table">
   <thead>
     <tr>
       <th scope="col pl-2" style="width: 18%;">Pedido de nº</th>
@@ -93,5 +93,6 @@ você ainda não fez nenhuma pedido
 <% end %>
 <% end %>
 <% end %>
-
-<div class="invisible"><%= link_to 'you cant see me', final_order %></div>
+<% if !@order_items.nil? %>
+<div class="invisible"><%= link_to 'CJR_MELHOR_EMPRESA', final_order %></div>
+<% end %>
