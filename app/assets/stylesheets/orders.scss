@@ -1,9 +1,9 @@
 .order-box-order {
     display: flex;
     flex-flow: row wrap;
-    margin-left: 14.5%;
+    margin-left: 12.5%;
     margin-right: 0%;
-    height: 60vh;
+    min-height: 60vh;
     position: inherit;
     bottom: 0;
 }
@@ -27,7 +27,7 @@
 }
 .margin
 {
-  margin-left: 14.5%;
+  margin-left: 12.5%;
 }
 #margin
 {

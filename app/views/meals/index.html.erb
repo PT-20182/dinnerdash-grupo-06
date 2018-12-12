@@ -17,10 +17,10 @@
           <div class="button-box"  id="toppad">
               <div class="row">
                 <div class="col" id="nopad">
-                  <%= link_to 'Edite', edit_meal_path(meal),class: "btn btn-warning btn-block"%>
+                  <%= link_to 'editar', edit_meal_path(meal),class: "btn btn-warning btn-block"%>
                 </div>
                 <div class="col">
-                  <%= link_to 'Delete', meal, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger btn-block" %>
+                  <%= link_to 'excluir', meal, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger btn-block" %>
                 </div>
               </div>
           </div>
@@ -28,7 +28,7 @@
       </div>
       <% end %>
     </div>
-    <div class="pad7">
-   <%= link_to "Nova refeiçao", new_meal_path ,class:"btn btn-success col-md-2"%>
+    <div class="pad7 ml-0">
+   <%= link_to "nova refeiçao", new_meal_path ,class:"btn btn-success col-md-3"%>
    </div>
 </div>

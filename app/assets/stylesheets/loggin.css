@@ -99,11 +99,11 @@ h1
 
 .button:hover
 {
-	border:solid 1px green;
+	padding :2%;
 	border-radius: 5px;
-	background-color: white;
+	width: 100%;
+	border-color: green;
 	cursor: pointer;
-
 }
 
 .button span
