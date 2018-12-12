@@ -32,8 +32,8 @@ h1
 .titulo
 {
 	margin-left: 13%;
-	margin-bottom: 9%;
-	margin-top: 9.5%;
+	margin-bottom: 3%;
+	margin-top: 8.5%;
 }
 .titulo_singup
 {
@@ -43,7 +43,7 @@ h1
 }
 #nome
 {
-	padding: 2%;
+	padding: 1.5%;
 	width: 100%;
 	border-radius: 4px;
 	border:solid 1px #a0a0a0;
@@ -51,7 +51,7 @@ h1
 
 #email
 {
-	padding: 2%;
+	padding: 1.5%;
 	width: 100%;
 	border-radius: 4px;
 	border:solid 1px #a0a0a0;
@@ -59,7 +59,7 @@ h1
 
 #password
 {
-	padding: 2%;
+	padding: 1.5%;
 	width: 100%;
 	border-radius: 4px;
 	border:solid 1px #a0a0a0;
@@ -67,7 +67,7 @@ h1
 
 #password_confirmation
 {
-	padding: 2%;
+	padding: 1.5%;
 	width: 100%;
 	border-radius: 4px;
 	border:solid 1px #a0a0a0;
@@ -153,12 +153,14 @@ h1
 	background-color: #39cc6c;
 	cursor: pointer;
 }
+@import url('https://fonts.googleapis.com/css?family=Amaranth');
 #title
 {
 	font-size: 50px;
 	color: black;
 	text-decoration: none;
 	font-size: bold;
+	font-family: 'Amaranth', sans-serif !important; 
 }
 #title:hover
 {
