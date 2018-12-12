@@ -5,8 +5,11 @@
     <div class="header-perfil">
 <% elsif controller_name == 'categories' || controller_name== 'meals' %>
     <div class="header-backoffice">
+<% elsif controller_name == 'orders'%>
+    <div class="header-orders">
+
 <% end %>
-        <div class="top-box"> 
+        <div class="top-box">
             <div>
                 <%= link_to('dinnerdash', root_path, class: 'dinnerdash') %>
             </div>
@@ -34,8 +37,8 @@
             <div class="big-bottom-box">
                 <% if current_page?(root_path) && !user_signed_in? %>
                     Monte o seu prato
-                <% elsif current_page?(root_path) && user_signed_in? %>
-                    Bem-vindx, <%= current_user.name %>
+                <% elsif current_page?(root_path) ||controller_name == 'orders' && user_signed_in? %>
+                    Bem-vindo, <%= current_user.name %>
                 <% elsif controller_name == 'registrations'%>
                     Seu perfil
                 <% elsif controller_name == 'categories' || controller_name == 'meals' %>
@@ -49,6 +52,8 @@
                     Atualize os seus dados pessoais e senhas.
                 <% elsif controller_name == 'categories' || controller_name =='meals' %>
                     Gerencie pedidos, refeições e mais.
+                <% elsif controller_name == 'orders'%>
+                    Nesse espaço você pode finalizar seu pedido.
                 <% end %>
             </div>
         </div>
