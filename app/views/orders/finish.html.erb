@@ -3,9 +3,9 @@
 <h3 class="margin">O seu pedido:</h3>
 <p class=" margin mt-3 gray">confira os itens pedidos antes de finalizar o pedido</p>
 <div class="order-box-order">
-  <% @order.each do |item|%>
+  <% @order.last.order_items.each do |item|%>
   <div class="item-box mb-0" style="width: 41%;">
-    <img src= "<%= image_meal(item.meal) %>" class="item-image">
+    
     <div class="item-text">
       <div class="item-name"><%= item.meal.name %></div>
       <div class="item-info">
@@ -59,7 +59,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @order.each do |order|%>
+    <% @order.last.order_items.each do |order|%>
     <tr>
       <td><%= order.id %></td>
       <td><span class="badge badge-primary px-5 py-2">pendente</span></td>
@@ -84,9 +84,9 @@
       <div class="modal-body">
 
         <div class="row" id="margin">
-          <% @order.each do |item|%>
+          <% @order.last.order_items.each do |item|%>
           <div class="item-box mb-0 ml-2" style="width: 45%;">
-            <img src= "<%= image_meal(item.meal) %>" class="item-image">
+            
             <div class="item-text">
               <div class="item-name"><%= item.meal.name %></div>
               <div class="item-info">

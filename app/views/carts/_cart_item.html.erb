@@ -36,9 +36,9 @@
 	<% end %>
 	<% if !current_user.nil? %>
 		<%= current_user.email %>
-		<%= link_to 'finalizar', final_order %>
+		<%= button_to "Finalizar", :method=> "final_order" %>
 	<% end %>
-	
+		
 <% else %>
 
 <h1>Nenhum elemento no prato.</h1>
