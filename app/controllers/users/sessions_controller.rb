@@ -9,9 +9,9 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  def create
+    session[:current_user_id] = @user.id
+  end
 
   # DELETE /resource/sign_out
   # def destroy

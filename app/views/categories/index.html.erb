@@ -13,16 +13,16 @@
         <tbody>
 
               <td><%= link_to category.name, category_path(category),class: "normal gray" %></td>
-              <td><%=%></td>
+              <td><div class="gray"><%= category.meals.length %></div></td>
               <td><div class="gray"><%= category.created_at.strftime("%d/%m/%Y") %></div></td>
-              <td><%= button_to 'Editar', edit_category_path(category), method: 'get',class: "Edit"%></td>
-              <td><%= button_to 'Excluir', category_path(category), method: 'delete', data: { confirm: 'Deseja Mesmo Excluir ?' },class: "Del"%></td>
+              <td><%= button_to 'editar', edit_category_path(category), method: 'get',class: "Edit"%></td>
+              <td><%= button_to 'excluir', category_path(category), method: 'delete', data: { confirm: 'Deseja Mesmo Excluir ?' },class: "Del"%></td>
 
         </tbody>
 <% end %>
 	</div>
 
 					<div class="pad8">
-        <%= link_to "nova categoria de refeição", new_category_path ,class:"btn btn-success col-md-2 btn-block"%>
+        <%= link_to "nova categoria de refeição", new_category_path ,class:"btn btn-success col-md-3 btn-block"%>
 				</div>
 				

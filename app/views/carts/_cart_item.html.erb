@@ -5,7 +5,9 @@
 		<% end %>
 	</ul>
 <% end %>
-
+<% if !current_user.nil? %>
+	<%= current_user.email %>
+<% end %>	
 <% if @order_items.size>0 %>
 	<% @order_items.each do |item| %>
 		<div class="well">
@@ -32,8 +34,21 @@
 			</div>
 		</div>
 	<% end %>
+	<% if !current_user.nil? %>
+		<%= current_user.email %>
+		<%= button_to "Finalizar", :method=> "final_order" %>
+	<% end %>
+		
 <% else %>
 
 <h1>Nenhum elemento no prato.</h1>
 	
 <% end %>
+<% if !current_user.nil? %>
+	<h3>pedidos</h3>
+	<% if @orders.size>0 %>
+		<% @orders.each do |pedido| %>
+			<%= pedido.subtotal %>
+		<% end %>
+	<% end %>
+<% end %>	
