@@ -16,7 +16,11 @@
               <% @meals.where(:category_id => category.id).each do |meal| %>
                <!-- Os propios cards -->
               <div class="meal-box" id="p">
+<<<<<<< HEAD
+                
+=======
                 <div class="meal-image" style="background-image: url(<%= image_meal(meal) %>)">
+>>>>>>> b3520810f8bd76b41659cfb1f0590d59d0428509
                   <div class="meal-name" align="center">
                     <span><%= meal.name %><span>
                   </div>

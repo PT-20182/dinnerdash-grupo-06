@@ -5,5 +5,15 @@ class CartsController < ApplicationController
 			@orders = current_user.orders
 		end
 	end
+	def create
+		order=current_order
+        user=current_user
+        order.user_id=user.id
+        order.save!
+		session[:order_id]=Order.new.id
+	end
+
+
 	
+	 
 end
