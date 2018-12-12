@@ -31,11 +31,11 @@
                         <%= f.hidden_field :meal_id, value: meal.id %>
                         <%= f.label :Quantidade, class: 'quantidade' %>
                         <%= f.select  :quantity, (1..10) , {}, {class: 'selector-meal'} %>
-                        <% ord = OrderItem.find_by(meal_id: meal.id)%>
+                        <% ord = OrderItem.find_by(meal_id: meal.id) %>
                         <% if @order.include?(ord) %>
                           <div class="button-meal"><span class="checkmark">&#x2714</span>adicionado ao carrinho </div>
                         <% else %>
-                          <%= f.submit "adicionar no carrinho", class: 'button-meal', data: { disable_with: false } %>
+                          <%= f.submit "adicionar ao carrinho", class: 'button-meal', data: { disable_with: false } %>
                         <% end %> 
                       </div>
                     <% end %>
