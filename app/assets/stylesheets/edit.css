@@ -93,23 +93,6 @@
 	margin-right: 1%;
 }
 
-.buttont
-{
-	padding :0.7%;
-	border-radius: 5px;
-	background-color: none;
-	width: 3%%;
-}
-
-.button:hover
-{
-	padding :2%;
-	border:solid 1px green;
-	border-radius: 5px;
-	background-color: black;
-	cursor: pointer;
-
-}
 
 .button span
 {

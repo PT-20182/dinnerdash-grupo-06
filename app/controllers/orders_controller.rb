@@ -7,5 +7,11 @@ class OrdersController < ApplicationController
   end
 
   def last
+    @categories = Category.all
+    @meals = Meal.all
+    @order = current_order.order_items
+    if !current_user.nil?
+      @orders = current_user.orders
+    end
   end
 end
