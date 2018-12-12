@@ -49,11 +49,11 @@
         <div class="cart-title">Finalizou o seu prato?</div>
         <div class="cart-subtitle">Confira os itens pedidos antes de finalizar o pedido.</div>
         <!-- cards horizontais do pedido-->
-        <div class="order-box"> 
+        <div class="order-box">
           <% @order.each do |item|%>
           <div class="item-box">
-            <img src= "<%= rails_blob_url(item.meal.image) %>" class="item-image">
-            <div class="item-text"> 
+            <img src= "<%= image_meal(item.meal) %>" class="item-image">
+            <div class="item-text">
               <div class="item-name"><%= item.meal.name %></div>
               <div class="item-info">
                 <span>Quantidade: <%= item.quantity %></span>
@@ -69,10 +69,10 @@
                   <%= link_to "remover do meu prato", item, method: :delete, remote: true, class: 'button-item-delete' %>
                 </div>
               <% end %>
-            </div>  
-          </div>  
+            </div>
+          </div>
           <% end %>
-        </div> 
+        </div>
       </div>
       <!--preco-->
       <div class="total-price-box">
@@ -80,7 +80,7 @@
           <div class="cart-title">Preço total do pedido: <span class="total-price-span">R$ <%= sprintf("%.2f", current_order.subtotal).gsub '.',',' %></span></div>
           <div class="button-total-price-box">
           <!--Botao falso por enquanto, tirar duvidas-->
-            <%= link_to('finalizar pedido', user_session_path, class: 'button-total-price-log-in')%>
+            <%= link_to('finalizar pedido', orders_finish_path, class: 'button-total-price-log-in')%>
           </div>
         <% else %>
           <div class="cart-title">Preço total do pedido: <span class="total-price-span">R$ <%= sprintf("%.2f", current_order.subtotal).gsub '.',',' %></span></div>
@@ -106,7 +106,7 @@
                 success: function( data ) {
                 }
             });
-          }) 
+          })
       </script>
   </body>
 </html>

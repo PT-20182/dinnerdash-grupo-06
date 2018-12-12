@@ -2,7 +2,7 @@
 <div class="back">
     <%= image_tag("dinner.jpg", :alt => "Dinner", :class => "tamanho") %>
     <div class="log">
-			<div class="titulo_singup"><h1 > <%= link_to "Dinnerdash",root_path, id: "title" %> </h1></div>
+			<div class="titulo"><h1 > <%= link_to "dinnerdash",root_path, id: "title" %> </h1></div>
 			<% if notice %>
 			<div class="pad">
       <p class="alert alert-success"><%= notice %></p>
@@ -17,7 +17,7 @@
 			</div>
 				<div class="pad">
           <p>Nome</p>
-          <%= f.email_field :name, autofocus: true, autocomplete: "nome",  :id=>"nome" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "nome",  :id=>"nome" %>
         </div>
 				<div class="pad">
           <p>Email</p>
@@ -37,7 +37,7 @@
 				</div>
 
         <div class="pad">
-					<%= f.submit "Cadastrar-se",class:"button" %>
+					<%= f.submit "cadastrar",class:"button" %>
 				</div>
 
 
@@ -45,5 +45,5 @@
 			<div class="linha"></div>
 			<div class="pad"><span id="bold">Já possui conta?</span></div>
 			<div class="pad ">
-			<%=button_to "Sign-in", new_user_session_path,class: "buttonc",:method => "get" %>
+			<%=button_to "fazer login", new_user_session_path,class: "buttonc",:method => "get" %>
 		</div>

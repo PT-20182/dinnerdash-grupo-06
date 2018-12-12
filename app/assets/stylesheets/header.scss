@@ -25,7 +25,13 @@ body {
     height: 60vh;
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(backoffice.jpeg);
     background-size: cover;
-    background-position: center;    
+    background-position: center;
+}
+.header-orders {
+    height: 60vh;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(order.jpeg);
+    background-size: cover;
+    background-position: center;
 }
 // div de cima com a logo dinnerdash e as outras palavrinhas no canto
 .top-box {
@@ -42,7 +48,7 @@ body {
 .dinnerdash {
     text-decoration: none;
     color: white;
-    font-family: 'Amaranth', sans-serif !important; 
+    font-family: 'Amaranth', sans-serif !important;
     font-size: 24px;
 }
 
@@ -79,7 +85,7 @@ body {
     width: 150px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;   
+    justify-content: space-between;
 }
 // div das frases debaixo
 .bottom-box {
