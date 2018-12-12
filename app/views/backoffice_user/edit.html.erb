@@ -1,0 +1,49 @@
+<div class="edit-box">
+    <div class="edit-title">
+        Editar usuário
+    </div>
+    <div>
+        <%= form_for( @user, url: backoffice_user_path(@user.id), html: { method: :put }) do |f| %>
+        <!--Mostrando mensagens de erro --->
+        <% @user.errors.full_messages.each do |message| %>
+            <div class="alert alert-danger" role="alert">
+            <strong><%= message%></strong>
+            </div>
+        <% end %>
+
+        <div class="row row-details">
+            <div class="col">
+                <%= f.label :Nome, class: "edit-label" %><br/>
+                <%= f.text_field :name, class:'submit' %>
+            </div>
+
+            <div class="col">
+                <%= f.label :Perfil, class: "edit-label"%><br/>
+                <%= f.select :is_admin, {"Administrador" => true , "Não Admistrador" => false}, {}, {class: 'select-edit'}%>
+            </div>
+        </div>
+
+        <div class="row row-details">
+            <div class="col">
+                <%= f.label :email, class: "edit-label" %><br/>
+                <%= f.email_field :email, class: 'submit'%>
+            </div>
+
+            <div class="col">
+                <%= f.label "Cadastrado em", class: "edit-label" %><br/>
+                <div class="submit"></div>
+            </div>
+        </div>
+
+        <div class="form-row row-details"> 
+            <div class="actions">
+                <%= f.submit "atualizar meu perfil", class: 'button-edit' %>
+            </div>
+            <div>
+                <%= link_to "voltar", backoffice_user_index_path , class: 'link-edit-backoffice' %>
+            </div>
+        <div>
+    
+        <% end %>
+    </div>
+</div>

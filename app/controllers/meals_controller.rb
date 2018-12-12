@@ -1,6 +1,12 @@
 class MealsController < ApplicationController
+  before_action :require_admin
   before_action :set_meal, only: [:show, :edit, :update, :destroy]
 
+  def require_admin
+    if !current_user.is_admin
+      redirect_to root_path
+    end
+  end
   # GET /meals
   # GET /meals.json
   def index
