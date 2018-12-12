@@ -93,6 +93,6 @@ você ainda não fez nenhuma pedido
 <% end %>
 <% end %>
 <% end %>
-<% if !@order_items.nil? %>
+<% if current_order.subtotal > 0 %>
 <div class="invisible"><%= link_to 'CJR_MELHOR_EMPRESA', final_order %></div>
 <% end %>

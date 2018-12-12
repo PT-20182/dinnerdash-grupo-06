@@ -36,7 +36,7 @@
   <div class="col p-0 margin">
     <div class="cart-title p-0">Preço total do pedido: <span class="total-price-span">R$ <%= sprintf("%.2f", current_order.subtotal).gsub '.',',' %></span></div>
     <div class="button-total-price-box">
-      <% if !@order_items.nil? %>
+      <% if current_order.subtotal > 0 %>
         <%= link_to('finalizar pedido', orders_last_path, class: 'button-total-price-log-in')%>
       <% else %>
         <button type="button" class="button-total-price-log-in-dis" disabled>carrinho vazio</button>
