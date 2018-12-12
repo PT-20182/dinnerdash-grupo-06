@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'orders/finish'
+  get 'orders/last'
   get 'home/show'
   resources :order_items
   resource :carts, only: [:show]

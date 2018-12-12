@@ -103,8 +103,8 @@
 
 .button:hover
 {
-	padding :1.7%;
-	border:solid 2px green;
+	padding :2%;
+	border:solid 1px green;
 	border-radius: 5px;
 	background-color: black;
 	cursor: pointer;
