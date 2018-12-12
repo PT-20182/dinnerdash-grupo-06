@@ -7,11 +7,18 @@
 </div>
 <div class="pad9">
       <%= form_with model: @category do |form| %>
-      <p>Nome</p>
+
       <div class="form-inline">
-        <div class="form-group mb-2" style="width: 100%;">
-          <%= form.text_field :name, autofocus: true, placeholder: "nome",class: "form-control mr-4", style:"width: 47%;"%>
-          <div class="form-control" style="width: 47.7%;"></div>
+        <div style="width: 50%;">
+        <p>Nome</p>
+        <div class="form-group" style="width: 100%;">
+          <%= form.text_field :name, autofocus: true, placeholder: "name",class: "form-control mr-4", style:"width: 100%;"%>
+        </div>
+      </div>
+        <div style="width: 50%;">
+          <p>Cadastrado em</p>
+          <input class="form-control disabled" style="width: 100%;"placeholder="<%=@category.created_at.strftime("%d/%m/%Y") %>" disabled ></input>
+        </div>
     </div>
     </div>
   </div>
