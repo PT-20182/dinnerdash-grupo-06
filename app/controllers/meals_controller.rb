@@ -26,12 +26,10 @@ class MealsController < ApplicationController
   # POST /meals.json
   def create
     @meal = Meal.new(meal_params)
-
     respond_to do |format|
       if @meal.save
-        format.html { redirect_to @meal, notice: 'Meal was successfully created.' }
+        format.html { redirect_to meals_path, notice: 'Meal was successfully created.' }
         format.json { render :show, status: :created, location: @meal }
-        redirect_to meals_path
       else
         format.html { render :new }
         format.json { render json: @meal.errors, status: :unprocessable_entity }
@@ -45,15 +43,15 @@ class MealsController < ApplicationController
   def update
     respond_to do |format|
       if @meal.update(meal_params)
-        format.html { redirect_to @meal, notice: 'Meal was successfully updated.' }
+        format.html { redirect_to meals_path, notice: 'Meal was successfully updated.' }
         format.json { render :show, status: :ok, location: @meal }
-        redirect_to meals_path
       else
         format.html { render :edit }
         format.json { render json: @meal.errors, status: :unprocessable_entity }
         render 'edit'
       end
     end
+
   end
 
   # DELETE /meals/1
@@ -67,6 +65,7 @@ class MealsController < ApplicationController
     redirect_to meals_path
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meal
@@ -76,5 +75,7 @@ class MealsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def meal_params
       params.require(:meal).permit(:name, :description, :price, :image, :available, :category_id)
+
     end
+
 end

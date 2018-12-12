@@ -3,18 +3,25 @@
     <div class="header-home">
 <% elsif controller_name == 'registrations' %>
     <div class="header-perfil">
+<% elsif controller_name == 'categories' || controller_name== 'meals' %>
+    <div class="header-backoffice">
 <% end %>
-
         <div class="top-box"> 
             <div>
                 <%= link_to('dinnerdash', root_path, class: 'dinnerdash') %>
             </div>
-        <% if user_signed_in? %>
+        <% if user_signed_in? && current_user.is_admin%>
+            <div class="rigth-box-backoffice">
+        <% elsif user_signed_in? && !current_user.is_admin%>
             <div class="rigth-box-perfil">
         <% else%>
             <div class="rigth-box-home">
         <% end %>
-                <% if user_signed_in? %>
+                <% if user_signed_in? && current_user.is_admin%>
+                    <%= link_to('backoffice', categories_path, class:'link-backoffice') %>
+                    <%= link_to('perfil', edit_user_registration_path, class:'link') %>
+                    <%= link_to('sair', destroy_user_session_path, method: :delete, class: 'link')%>
+                <% elsif user_signed_in? && !current_user.is_admin %>
                     <%= link_to('perfil', edit_user_registration_path, class:'link') %>
                     <%= link_to('sair', destroy_user_session_path, method: :delete, class: 'link')%>
                 <% else %>
@@ -25,10 +32,14 @@
         </div>
         <div class="bottom-box">
             <div class="big-bottom-box">
-                <% if current_page?(root_path) %>
+                <% if current_page?(root_path) && !user_signed_in? %>
                     Monte o seu prato
+                <% elsif current_page?(root_path) && user_signed_in? %>
+                    Bem-vindx, <%= current_user.name %>
                 <% elsif controller_name == 'registrations'%>
                     Seu perfil
+                <% elsif controller_name == 'categories' || controller_name == 'meals' %>
+                    Backoffice
                 <% end %>
             </div>
             <div class="small-bottom-box">
@@ -36,6 +47,8 @@
                     Escolha sua salada, molho, prato principal, guarnição e bebida
                 <% elsif controller_name == 'registrations' %>
                     Atualize os seus dados pessoais e senhas.
+                <% elsif controller_name == 'categories' || controller_name =='meals' %>
+                    Gerencie pedidos, refeições e mais.
                 <% end %>
             </div>
         </div>

@@ -1,11 +1,10 @@
-<%= image_tag("backoffice.jpg", :alt => "backoffice", :class => "imagem") %>
 <%= render 'layouts/backofficeBar'%>
 
-<div class="folder" align="center">
-    <div class="card-deck">
+<div class="folder">
+    <div class="card-group m-0" id="margin">
       <% @meals.each do |meal| %>
-      <div class="meal-box" id="p">
-        <div class="meal-image" style="background-image: url(<%= rails_blob_url(meal.image) %>)">
+      <div class="meal-card" id="botmargin" >
+        <div class="meal-image" style="background-image: url(<%= image_meal(meal) %>)">
           <div class="meal-name" align="center">
             <span><%= meal.name %><span>
           </div>
@@ -14,17 +13,22 @@
           <div class="descricao">
             <%= meal.description %>
           </div>
-          <span class="preco">R$ <%= sprintf("%.2f", meal.price).gsub '.',',' %> por porção</span>
-          <div class="quantity-box">
-            <%= link_to 'Edite', edit_meal_path(meal),class: "btn btn-warning btn-block"%>
-            <%= link_to 'Delete', meal, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger btn-block" %>
+          <span class="preco" id="toppreco">R$ <%= sprintf("%.2f", meal.price).gsub '.',',' %> por porção</span>
+          <div class="button-box"  id="toppad">
+              <div class="row">
+                <div class="col" id="nopad">
+                  <%= link_to 'Edite', edit_meal_path(meal),class: "btn btn-warning btn-block"%>
+                </div>
+                <div class="col">
+                  <%= link_to 'Delete', meal, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger btn-block" %>
+                </div>
+              </div>
           </div>
         </div>
       </div>
       <% end %>
     </div>
-</div>
-
- <div class="buttomPad">
-<%= link_to "Nova refeiçao", new_meal_path ,class:"btn btn-success col-md-2"%>
+    <div class="pad7">
+   <%= link_to "Nova refeiçao", new_meal_path ,class:"btn btn-success col-md-2"%>
+   </div>
 </div>
