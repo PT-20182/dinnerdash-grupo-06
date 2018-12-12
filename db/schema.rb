@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2018_12_06_201939) do
     t.float "total"
     t.float "tax"
     t.float "shipping"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

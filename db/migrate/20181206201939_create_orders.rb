@@ -5,6 +5,8 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.float :total
       t.float :tax
       t.float :shipping
+      t.integer :user_id
+      # t.references :user, foreign_key: true
 
       t.timestamps
     end
