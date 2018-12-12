@@ -1,9 +1,13 @@
 class BackofficeUserController < ApplicationController
     before_action :require_admin
-
+  
     def require_admin
+        if current_user != nil 
         if !current_user.is_admin
             redirect_to root_path
+        end
+        else
+        redirect_to root_path
         end
     end
     
@@ -18,6 +22,7 @@ class BackofficeUserController < ApplicationController
     def update
         @user = User.find(params[:id])
         @user.update_attributes(user_update_params)
+        redirect_to backoffice_user_index_path
     end
 
     def destroy

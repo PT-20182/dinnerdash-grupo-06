@@ -3,7 +3,11 @@ class MealsController < ApplicationController
   before_action :set_meal, only: [:show, :edit, :update, :destroy]
 
   def require_admin
-    if !current_user.is_admin
+    if current_user != nil 
+      if !current_user.is_admin
+        redirect_to root_path
+      end
+    else
       redirect_to root_path
     end
   end

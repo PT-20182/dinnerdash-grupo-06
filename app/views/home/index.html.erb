@@ -87,13 +87,16 @@
                 },
                 data: { order_item: { meal_id: self.meal_id, quantity: self.value} },
                 success: function( data ) {
-        
-                  let preco = document.getElementById('preco-' + self.id);
-                  preco.innerHTML = "<span>Quantidade: " + value + "</span>";
+                  
+                  preco = document.getElementById('preco-' + self.id)
+                  preco.innerHTML = "<span>Quantidade: " + value + "</span>"
 
-                  let preco_subtotal = document.getElementById('preco-subtotal-' + self.id);
-                  let preco_unitario = document.getElementById('preco-unitario-' + self.id);
-                  card.innerHTML = "<span>Quantidade: " + value + "</span>";
+                  console.log(preco)  
+                  preco_subtotal = document.getElementById('preco-subtotal-' + self.id)
+                  console.log(preco_subtotal)
+                  preco_unitario = parseFloat(document.getElementById('preco-unitario-' + self.id).innerText.replace(",","."));
+                  console.log(preco_unitario)
+                  preco_subtotal.innerHTML = "<span>Preço total: R$ " + (preco_unitario*value).toFixed(2).toString().replace(".",",") + "</span>"
                 }
             });
           }) 
