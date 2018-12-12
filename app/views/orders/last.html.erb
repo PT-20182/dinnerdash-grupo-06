@@ -21,9 +21,10 @@
 </div>
 
 <div class="last-orders">
-  <div class="col p-0" align="center">
-  <h3 class="mt-5 mb-4">Pedidos anteriores</h3>
+  <div class="col p-0" id="align">
+  <h3 class="mt-5 mb-4 "id="noleft" style="width: 73.5%;">Pedidos anteriores</h3>
   <% if !current_user.nil? %>
+      <% if @orders.size>0 %>
 <table class="table" style="width: 73.5%;">
   <thead>
     <tr>
@@ -83,6 +84,11 @@
       </div>
     </div>
   </div>
+</div>
+<% else %>
+<div class="alert alert-primary mb-5" role="alert" style="width: 73.5%;">
+você ainda não fez nenhuma pedido
+</div>
 </div>
 <% end %>
 <% end %>
