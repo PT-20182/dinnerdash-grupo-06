@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
     @meals = Meal.all
     @order_item = current_order.order_items
     if !current_user.nil?
-    @orders = current_user.orders
+      @orders = current_user.orders
     end
   end
 
@@ -16,4 +16,5 @@ class OrdersController < ApplicationController
       @orders = current_user.orders
     end
   end
+ 
 end

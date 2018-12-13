@@ -17,7 +17,7 @@
               <td><div class="gray"><%= category.created_at.strftime("%d/%m/%Y") %></div></td>
               <td><%= button_to 'editar', edit_category_path(category), method: 'get',class: "Edit"%></td>
               <td><%= button_to 'excluir', category_path(category), method: 'delete', data: { confirm: 'Deseja Mesmo Excluir ?' },class: "Del"%></td>
-
+ 
         </tbody>
 <% end %>
 </table>

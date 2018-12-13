@@ -3,6 +3,7 @@
 <h3 class="margin">O seu pedido:</h3>
 <p class=" margin mt-3 gray">confira os itens pedidos antes de finalizar o pedido</p>
 <div class="order-box-order">
+
   <% @order_item.each do |item|%>
   <div class="item-box mb-0" style="width: 41%;">
     <img src= "<%= image_meal(item.meal) %>" class="item-image">
@@ -24,7 +25,7 @@
         
       <% end %>
     </div>
-  </div>
+    <% end %>
   <% end %>
 </div>
 <div class="col pl-0 mb-5 margin"  style="width: 73.5%;">
@@ -111,7 +112,6 @@
               </tbody>
             </table>
           </div>
-
           <% else %>
           <div class="alert alert-primary mb-5" role="alert" style="width: 73.5%;">
             você ainda não fez nenhuma pedido

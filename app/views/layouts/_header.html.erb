@@ -3,7 +3,7 @@
     <div class="header-home">
 <% elsif controller_name == 'registrations' %>
     <div class="header-perfil">
-<% elsif controller_name == 'categories' || controller_name== 'meals' || controller_name == 'backoffice_user' %>
+<% elsif controller_name == 'categories' || controller_name== 'meals' || controller_name == 'backoffice_user' || controller_name == 'backoffice_orders' %>
     <div class="header-backoffice">
 <% elsif controller_name == 'orders'%>
     <div class="header-orders">
@@ -41,7 +41,7 @@
                     Bem-vindo, <%= current_user.name %>
                 <% elsif controller_name == 'registrations'%>
                     Seu perfil
-                <% elsif controller_name == 'categories' || controller_name == 'meals' || controller_name == 'backoffice_user' %>
+                <% elsif controller_name == 'categories' || controller_name == 'meals' || controller_name == 'backoffice_user' || controller_name == 'backoffice_orders' %>
                     Backoffice
                 <% end %>
             </div>
@@ -50,7 +50,7 @@
                     Escolha sua salada, molho, prato principal, guarnição e bebida
                 <% elsif controller_name == 'registrations' %>
                     Atualize os seus dados pessoais e senhas.
-                <% elsif controller_name == 'categories' || controller_name == 'meals' || controller_name == 'backoffice_user' %>
+                <% elsif controller_name == 'categories' || controller_name == 'meals' || controller_name == 'backoffice_user' || controller_name == 'backoffice_orders' %>
                     Gerencie pedidos, refeições e mais.
                 <% elsif controller_name == 'orders'%>
                     Nesse espaço você pode finalizar seu pedido.
