@@ -1,7 +1,0 @@
-<% if @order.errors.any? || @order_item.errors.any? %>
-	alert("Invalid")
-<% else %>
-	$(".cart").html("<%= escape_javascript(render 'layouts/cart') %>")
-<% end %>
-$("#results-box").append("<%= escape_javascript(render partial: 'home/category_card', locals: { item: @order_item } ) %>");
-$("#price-results").html("R$ <%= sprintf("%.2f", current_order.subtotal).gsub '.',',' %>");
