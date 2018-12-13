@@ -19,7 +19,7 @@
 
                
                 <div class="meal-image" style="background-image: url(<%= image_meal(meal) %>)">
-                  <div class="meal-name" align="center">
+                  <div class="meal-name-1" align="center">
                     <span><%= meal.name %><span>
                   </div>
                 </div>
@@ -33,8 +33,13 @@
                         <%= f.hidden_field :meal_id, value: meal.id %>
                         <%= f.label :Quantidade, class: 'quantidade' %>
                         <%= f.select  :quantity, (1..10) , {}, {class: 'selector-meal'} %>
-                        <% ord = OrderItem.find_by(meal_id: meal.id) %>
-                        <% if @order.include?(ord) %>
+                        <% flag = false%>
+                        <% @order.each do |item| %>
+                          <% if item.meal_id == meal.id%>
+                            <% flag = true %>
+                          <% end %>
+                        <% end %>
+                        <% if flag == true %>
                           <div class="button-meal"><span class="checkmark">&#x2714</span>adicionado ao carrinho </div>
                         <% else %>
                           <%= f.submit "adicionar ao carrinho", class: 'button-meal', data: { disable_with: false } %>

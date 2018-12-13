@@ -41,9 +41,8 @@ class MealsController < ApplicationController
         format.html { redirect_to meals_path, notice: 'Meal was successfully created.' }
         format.json { render :show, status: :created, location: @meal }
       else
-        format.html { render :new }
+        format.html { redirect_to new_meal_path, alert: 'Meal with wrong attributes'}
         format.json { render json: @meal.errors, status: :unprocessable_entity }
-        render 'new'
       end
     end
   end
@@ -69,10 +68,9 @@ class MealsController < ApplicationController
   def destroy
     @meal.destroy
     respond_to do |format|
-      format.html { redirect_to meals_url, notice: 'Meal was successfully destroyed.' }
+      format.html { redirect_to meals_path, notice: 'Meal was successfully destroyed.' }
       format.json { head :no_content }
     end
-    redirect_to meals_path
   end
 
 

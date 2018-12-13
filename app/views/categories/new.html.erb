@@ -1,6 +1,6 @@
 
 <%= image_tag("backoffice.jpg", :alt => "backoffice", :class => "imagem") %>
-<%= render 'layouts/backofficeBar'%>
+
 <div class="folder_fixed">
   <div class="col">
 
@@ -9,16 +9,16 @@
   <div class="linhaback"></div>
 </div>
       <div class="pad9">
-        <%= form_with model: @category do |form| %>
+        <%= form_with(model: @category, local: true) do |form| %>
         <p>nome</p>
-        <%= form.text_field :name, placeholder: "nome",autofocus: true,class: "holder"  %>
+        <%= form.text_field :name, placeholder: "nome",autofocus: true,class: "holder", required: true %>
       </div>
-      <% end %>
       <div class="pad9">
         <br>
         <div class="row">
           <div class="col" >
-              <%= link_to "criar categoria de refeição", categories_path ,class:"btn btn-success col-md-3  mr-3 p-2"%>
+              <%= form.submit "criar categoria de refeição",class:"btn btn-success col-md-3  mr-3 p-2"%>
+              <% end %>
               <%= link_to "voltar", categories_path,class:"btn btn-secondary px-5 py-2"%>
         </div>
       </div>

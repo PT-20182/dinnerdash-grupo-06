@@ -6,13 +6,13 @@
   <div class="linhaback"></div>
 </div>
 <div class="pad9">
-      <%= form_with model: @category do |form| %>
+      <%= form_with(model: @category, local: true) do |form| %>
 
       <div class="form-inline">
         <div style="width: 50%;">
         <p>Nome</p>
         <div class="form-group" style="width: 100%;">
-          <%= form.text_field :name, autofocus: true, placeholder: "name",class: "form-control mr-4", style:"width: 100%;"%>
+          <%= form.text_field :name, autofocus: true, placeholder: "name",class: "form-control mr-4", style:"width: 100%;", required: true %>
         </div>
       </div>
         <div style="width: 50%;">
@@ -22,12 +22,12 @@
     </div>
     </div>
   </div>
-      <% end %>
       <div class="pad9">
         <br>
         <div class="row">
-          <div class="col" >
-        <%= link_to "atualizar categoria de refeição", categories_path ,class:"btn btn-success col-md-3  mr-3 p-2"%>
+          <div class="col">
+        <%= form.submit "atualizar categoria de refeição",class:"btn btn-success col-md-3  mr-3 p-2"%>
+        <% end %>
         <%= link_to "voltar", categories_path,class:"btn btn-secondary px-5 py-2"%>
       </div>
     </div>
