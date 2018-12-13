@@ -1,9 +1,9 @@
 <div class="folder-order">
 <div class="col p-0">
 <h3 class="margin">O seu último pedido:</h3>
-<p class=" margin mt-3 gray">aguarde o seu pedido ser entregue.</p>
+<p class=" margin mt-3 gray">Aguarde o seu pedido ser entregue.</p>
 <div class="order-box-order">
-  <% @order.each do |item|%>
+  <% @order_item.each do |item|%>
   <div class="item-box mb-0" style="width: 41%;">
     <img src= "<%= image_meal(item.meal) %>" class="item-image">
     <div class="item-text">
@@ -21,11 +21,11 @@
 </div>
 
 <div class="last-orders">
-  <div class="col p-0" id="align">
-  <h3 class="mt-5 mb-4 "id="noleft" style="width: 73.5%;">Pedidos anteriores</h3>
+  <div class="col" id="align">
+  <h3 class="mt-5 mb-4 "id="noleft">Pedidos anteriores</h3>
   <% if !current_user.nil? %>
-      <% if @orders.size>0 %>
-<table class="table" style="width: 73.5%;">
+      <% if @orders.size >0 %>
+<table class="table">
   <thead>
     <tr>
       <th scope="col pl-2" style="width: 18%;">Pedido de nº</th>
@@ -40,51 +40,57 @@
   		<% @orders.each do |order| %>
     <tr>
       <td><%=order.id %></td>
-      <td><span class="badge badge-primary px-5 py-2">pendente</span></td>
+      <td> <% if order.status.nil? || order.status == "pendente" %>
+                       <span class="badge badge-primary px-5 py-2">pendente</span>
+                   <% elsif order.status == "entregue" %>
+                       <span class="badge badge-success px-5 py-2">entregue</span>
+                   <% elsif order.status == "cancelado" %>
+                       <span class="badge badge-danger px-5 py-2">cancelado</span>
+                   <% end %>
+               </td>
       <td><%= order.created_at.strftime("%d/%m/%Y") %></td>
       <td>R$ <%= sprintf("%.2f", order.subtotal).gsub '.',',' %></td>
-      <td><button type="button" class="btn btn-link p-0" data-toggle="modal" data-target=".bd-example-modal-lg">ver itens pedidos</button></td>
+      <td><button type="button" class="btn btn-link p-0" data-toggle="modal" data-target="#q<%=order.id %>">ver itens pedidos</button>
+        <div class="modal fade bd-example-modal-lg" id="q<%=order.id %>" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Detalhes do pedido</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row" id="margin">
+                <% order.order_items.each do |item|%>
+                <div class="item-box mb-0 ml-2" style="width: 45%;">
+                  <img src= "<%= image_meal(item.meal) %>" class="item-image">
+                  <div class="item-text">
+                    <div class="item-name"><%= item.meal.name %></div>
+                    <div class="item-info">
+                      <span>Quantidade: <%= item.quantity %></span>
+                      <span>Preço unitário: R$ <%= sprintf("%.2f", item.unit_price).gsub '.',',' %></span>
+                      <span>Preço total: R$ <%= sprintf("%.2f", item.total_price).gsub '.',',' %></span>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary px-5" data-dismiss="modal">fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </td>
     </tr>
     <%end%>
   </tbody>
 </table>
 
 </div>
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Detalhes do pedido</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
 
-        <div class="row" id="margin">
-          <% @order.each do |item|%>
-          <div class="item-box mb-0 ml-2" style="width: 45%;">
-            <img src= "<%= image_meal(item.meal) %>" class="item-image">
-            <div class="item-text">
-              <div class="item-name"><%= item.meal.name %></div>
-              <div class="item-info">
-                <span>Quantidade: <%= item.quantity %></span>
-                <span>Preço unitário: R$ <%= sprintf("%.2f", item.unit_price).gsub '.',',' %></span>
-                <span>Preço total: R$ <%= sprintf("%.2f", item.total_price).gsub '.',',' %></span>
-              </div>
-            </div>
-          </div>
-          <% end %>
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary px-5" data-dismiss="modal">fechar</button>
-
-      </div>
-    </div>
-  </div>
-</div>
 <% else %>
 <div class="alert alert-primary mb-5" role="alert" style="width: 73.5%;">
 você ainda não fez nenhuma pedido
@@ -93,5 +99,6 @@ você ainda não fez nenhuma pedido
 <% end %>
 <% end %>
 <% end %>
-
-<div class="invisible"><%= link_to 'you cant see me', final_order %></div>
+<% if current_order.subtotal > 0 %>
+<div class="invisible"><%= link_to 'CJR_MELHOR_EMPRESA', final_order %></div>
+<% end %>

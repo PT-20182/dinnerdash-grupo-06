@@ -1,8 +1,8 @@
 class CategoriesController < ApplicationController
   before_action :require_admin
-  
+
   def require_admin
-    if current_user != nil 
+    if current_user != nil
       if !current_user.is_admin
         redirect_to root_path
       end
@@ -40,6 +40,9 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category = Category.find(params[:id])
+    @category.meals.each do |f|
+      f.destroy
+    end
     @category.destroy
     redirect_to categories_path
   end

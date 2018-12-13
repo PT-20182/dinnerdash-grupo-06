@@ -1,0 +1,78 @@
+<div class="table-box">
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+            <th scope="col">Pedido de n</th>
+            <th scope="col">Status</th>
+            <th scope="col">Data</th>
+            <th scope="col">Usuário</th>
+            <th scope="col">Preço total</th>
+            <th scope="col">Detalhes</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @orders.each do |order| %>
+                <tr id="<%= order.id %>">
+                <td>
+                    <%= order.id %>
+                </td>
+                <td> <% if order.status.nil? || order.status == "pendente" %>
+                        <span class="badge badge-primary px-5 py-2">pendente</span>
+                    <% elsif order.status == "entregue" %>
+                        <span class="badge badge-success px-5 py-2">entregue</span>
+                    <% elsif order.status == "cancelado" %>
+                        <span class="badge badge-danger px-5 py-2">cancelado</span>    
+                    <% end %>
+                </td>
+                <td><%= order.created_at.strftime("%d/%m/%Y") %></td>
+                <td><% if !@users.find_by_id(order.user_id).nil? %>
+                    <%= @users.find_by_id(order.user_id).name %>
+                    <% end %>     
+                </td>
+                <td><%= order.subtotal %></td>
+                <td><button type="button" class="btn btn-link p-0" id="noid" data-toggle="modal" data-target="#q<%=order.id %>">ver itens pedidos</button>
+                    <div class="modal fade bd-example-modal-lg" id="q<%=order.id %>" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Detalhes do pedido</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="row" id="margin">
+                            <% order.order_items.each do |item|%>
+                            <div class="item-box mb-0 ml-2" style="width: 45%;">
+                              <img src= "<%= image_meal(item.meal) %>" class="item-image">
+                              <div class="item-text">
+                                <div class="item-name"><%= item.meal.name %></div>
+                                <div class="item-info">
+                                  <span>Quantidade: <%= item.quantity %></span>
+                                  <span>Preço unitário: R$ <%= sprintf("%.2f", item.unit_price).gsub '.',',' %></span>
+                                  <span>Preço total: R$ <%= sprintf("%.2f", item.total_price).gsub '.',',' %></span>
+                                </div>
+                              </div>
+                            </div>
+                            <% end %>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary px-5" data-dismiss="modal">fechar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </td>
+                <td><%= link_to "editar", edit_backoffice_order_path(order), class: "Edit" %></td>
+                <td><%= link_to "excluir", backoffice_order_path(order), method: :delete, class: "Del" %></td>
+                </tr>
+            <% end %>
+        </tbody>    
+    </table>
+</div>
+
+
+
