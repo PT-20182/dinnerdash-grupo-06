@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Dinnerdash</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <%= stylesheet_link_tag "header" %>
+  </head>
+
+  <body>
+      <div class="home-categories-box">
+      <!--Parte com os cards-->
+          <% @categories.each do |category| %>
+            <span class="category-name"><%= category.name %></span>
+            <div class="category-box">
+              <% @meals.where(:category_id => category.id, :available => '1' ).each do |meal| %>
+               <!-- Os propios cards -->
+              <div class="meal-box" id="p">
+
+
+                <div class="meal-image" style="background-image: url(<%= image_meal(meal) %>)">
+                  <div class="meal-name" align="center">
+                    <span><%= meal.name %><span>
+                  </div>
+                </div>
+                  <div class="meal-info">
+                    <div class="descricao">
+                      <%= meal.description %>
+                    </div>
+                    <span class="preco">R$ <%= sprintf("%.2f", meal.price).gsub '.',',' %> por porção</span>
+                    <%= form_for( @order_item , remote: true) do |f| %>
+                      <div class="quantity-box">
+                        <%= f.hidden_field :meal_id, value: meal.id %>
+                        <%= f.label :Quantidade, class: 'quantidade' %>
+                        <%= f.select  :quantity, (1..10) , {}, {class: 'selector-meal'} %>
+                        <% ord = OrderItem.find_by(meal_id: meal.id) %>
+                        <% if @order.include?(ord) %>
+                          <div class="button-meal"><span class="checkmark">&#x2714</span>adicionado ao carrinho </div>
+                        <% else %>
+                          <%= f.submit "adicionar ao carrinho", class: 'button-meal', data: { disable_with: false } %>
+                        <% end %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+      </div>
+      <!-- Parte "Finalizou pedido?" -->
+      <div class="cart-box">
+        <div class="cart-title">Finalizou o seu prato?</div>
+        <div class="cart-subtitle">Confira os itens pedidos antes de finalizar o pedido.</div>
+        <!-- cards horizontais do pedido-->
+        <div class="order-box" id="results-box">
+          <% @order.each do |item|%>
+            <%= render partial: 'category_card', locals: {item: item}  %>
+          <% end %>
+        </div>
+      </div>
+      <!--preco-->
+      <div class="total-price-box">
+        <% if user_signed_in? %>
+          <div class="cart-title" >Preço total do pedido: <span class="total-price-span" id="price-results" >R$ <%= sprintf("%.2f", current_order.subtotal).gsub '.',',' %></span></div>
+          <div class="button-total-price-box">
+          <!--Botao falso por enquanto, tirar duvidas-->
+          <% if current_order.subtotal > 0 %>
+            <%= link_to('finalizar pedido', orders_finish_path, class: 'button-total-price-log-in')%>
+            <% else %>
+              <button type="button" class="button-total-price-log-in-dis" disabled>carrinho vazio</button>
+            <%end%>
+          </div>
+        <% else %>
+          <div class="cart-title">Preço total do pedido: <span class="total-price-span">R$ <%= sprintf("%.2f", current_order.subtotal).gsub '.',',' %></span></div>
+          <div class="cart-subtitle">Para finalizar o seu pedido, entre com sua conta ou faça o seu cadastro.</div>
+          <div class="button-total-price-box">
+            <%= link_to('entrar com sua conta', user_session_path, class: 'button-total-price-log-in')%>
+            <%= link_to('fazer o meu cadastro', new_user_registration_path, class: 'button-total-price-cadastro')%>
+          </div>
+        <% end %>
+      </div>
+      <script type="text/javascript">
+          $(".selector-item").change(function (params){
+            let value = params.currentTarget.options[params.currentTarget.selectedIndex].value
+            let url =  `<%= order_items_path %>/${this.id}`
+            let self = this
+            $.ajax({
+                type: "PATCH",
+                url: url,
+                headers: {
+                    'X-Transaction': 'POST Example',
+                    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: { order_item: { meal_id: self.meal_id, quantity: self.value} },
+                success: function( data ) {
+
+                  preco = document.getElementById('preco-' + self.id)
+                  preco.innerHTML = "<span>Quantidade: " + value + "</span>"
+
+                  console.log(preco)
+                  preco_subtotal = document.getElementById('preco-subtotal-' + self.id)
+                  console.log(preco_subtotal)
+                  preco_unitario = parseFloat(document.getElementById('preco-unitario-' + self.id).innerText.replace(",","."));
+                  console.log(preco_unitario)
+                  preco_subtotal.innerHTML = "<span>Preço total: R$ " + (preco_unitario*value).toFixed(2).toString().replace(".",",") + "</span>"
+                }
+            });
+          })
+      </script>
+  </body>
+</html>

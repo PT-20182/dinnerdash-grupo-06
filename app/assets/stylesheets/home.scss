@@ -1,0 +1,343 @@
+// div que contem toda pagina inicial com os cards tirando o header e o footer
+.home-categories-box {
+    padding: 25px 80px;
+    background-color: #fafafa;
+    border-bottom: 1px solid #d3d8d4;
+}
+
+// titulos cinzas das categorias
+.category-name {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    color: #4b4b4b;
+    margin-top: 25px;
+}
+// div das categorias
+.category-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 30px 0;
+}
+
+// divs cards de refeicao
+.meal-box {
+    height: 460px;
+    width: 275px;
+    margin-right: 25px;
+}
+
+.meal-image {
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+}
+
+.meal-name {
+    height: 50px;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
+    position: relative;
+    top: 190px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.meal-info {
+    height: 220px;
+    background-color: white;
+    border: 1px solid #d3d8d4;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.descricao {
+    height: 70px;
+    padding-top: 15px;
+    color: #969696;
+    font-size: 14px;
+}
+
+.preco {
+    color:#28a745;
+    padding-bottom: 10px;
+    font-size: 18px;;
+}
+
+.quantidade {
+    color: #7c7c7c;
+    font-size: 14px;
+    margin-bottom: 0 !important ;
+}
+
+.quantity-box {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.selector-meal {
+    height: 30px;
+    width: 100%;
+    border: 1px solid #d3d8d4;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+    color: #7c7c7c;
+}
+
+.button-meal {
+    height: 30px;
+    width: 100%;
+    background-color: #28a745;
+    border: 1px solid #28a745;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkmark {
+    font-size: 22px;
+    color: white;
+}
+
+#topmargin
+{
+  margin-top: 5%;
+}
+#botmargin
+{
+  margin-bottom: 5%;
+  align-self: flex-start;
+}
+#toppad
+{
+  padding-top: 5%;
+}
+#toppreco
+{
+  padding-top: 20%;
+}
+
+#nopad
+{
+  padding-right: 0px;
+  position: relative;
+  bottom: 1%;
+}
+.button-box {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.marginss{
+  margin-top: 4%;
+  margin-left: 1%;
+}
+
+// Div Finalizou pedido
+.cart-box {
+    padding: 0 80px;
+    background-color: white;
+}
+
+.cart-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    color: #4b4b4b;
+    padding-top: 30px;
+}
+
+.cart-subtitle {
+    color: #7c7c7c;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.order-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #d3d8d4;
+}
+
+.item-box {
+    height: 100px;
+    width: 48%;
+    display: flex;
+    flex-direction: row;
+    margin: 35px 0;
+}
+
+.item-image {
+    height: 100px;
+    width: 110px;
+    margin-right: 10px;
+}
+
+.item-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-name {
+    font-size: 15px;
+    color: #4b4b4b;
+    padding-bottom: 5px;
+}
+
+.item-info {
+    color: #7c7c7c;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-options {
+    height: 100px;
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-form {
+    margin-left: auto;
+}
+
+.item-form-label {
+    color: #7c7c7c;
+    font-size: 14px;
+}
+
+.selector-item {
+    height: 25px;
+    width: 100%;
+    border: 1px solid #d3d8d4;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+    color: #7c7c7c;
+}
+
+.button-item-delete {
+    height: 25px;
+    width: 100%;
+    text-decoration: none;
+    border:1px solid #e46773;
+    border-radius: 3px;
+    color: #e46773;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-item-delete:hover {
+    width: 100%;
+    text-decoration: none;
+    border:1px solid #e46773;
+    border-radius: 3px;
+    color: #e46773;
+    font-size: 12px;
+    align-items: center;
+}
+
+.total-price-box {
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+}
+
+.total-price-span {
+    color:#28a745;
+}
+
+.button-total-price-box {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.button-total-price-log-in {
+    text-decoration: none;
+    height: 30px;
+    width: 250px;
+    background-color: #28a745;
+    border: 1px solid #28a745;
+    border-radius: 4px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    margin-right: 20px;
+}
+.button-total-price-log-in-dis {
+    text-decoration: none;
+    height: 30px;
+    width: 250px;
+    background-color: white;
+    border: 1px solid #28a745;
+    border-radius: 4px;
+    color: #28a745;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    margin-right: 20px;
+}
+
+.button-total-price-log-in:hover {
+    text-decoration: none;
+    height: 30px;
+    width: 250px;
+    background-color: #28a745;
+    border: 1px solid #28a745;
+    border-radius: 4px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    margin-right: 20px;
+}
+
+.button-total-price-cadastro {
+    text-decoration: none;
+    height: 30px;
+    width: 250px;
+    background-color: white;
+    border: 1px solid #28a745;
+    border-radius: 4px;
+    color: #28a745;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.button-total-price-cadastro:hover {
+    text-decoration: none;
+    height: 30px;
+    width: 250px;
+    background-color: white;
+    border: 1px solid #28a745;
+    border-radius: 4px;
+    color: #28a745;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}

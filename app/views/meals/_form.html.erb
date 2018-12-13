@@ -1,0 +1,65 @@
+<%= form_with(model: meal, local: true) do |form| %>
+  <% if meal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meal.errors.count, "error") %> prohibited this meal from being saved:</h2>
+
+      <ul>
+      <% meal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col">
+        <%= form.label "Nome", class: "gray"%>
+          <%= form.text_field :name,class:"form-control" %>
+    </div>
+    <div class="col">
+          <%= form.label "Categoria", class: "gray"%>
+      <select class="form-control" <%= form.collection_select(:category_id, Category.all, :id, :name, prompt: true) %></select>
+    </div>
+  </div>
+
+  <div class="form-group" >
+  <br>
+      <%= form.label "descricão", class: "gray" %>
+       <textarea class="form-control" aria-label="With textarea" <%= form.text_field :description,class:"form-control"%> </textarea>
+  </div>
+
+  <div class="row">
+    <div class="col" style="width: 80em;">
+          <%= form.label "Preço", class: "gray" %>
+          <%= form.text_field :price ,class:"form-control" %>
+          <br>
+    </div>
+    <div class="col">
+      <%= form.label "Foto", class: "gray" %>
+      <br>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="validatedCustomFile" <%= form.file_field :image, accept: 'image/png,image/jpeg' %>
+        <label class="custom-file-label gray" for="validatedCustomFile">Escolher arquivo...</label>
+    </div>
+
+    </div>
+  </div>
+
+  <div class="col-p-0">
+    <label class="form-check-label"><%= form.check_box :available, {},"1","0"%></label>
+    <%= form.label "Está disponível no cardápio.", class: "gray" %>
+  </div>
+  <div class="pad9 m-0" style="width: 80%;">
+    <br>
+    <div class="row" style="width: 80%;">
+      <div class="col" >
+    <% if current_page?(new_meal_path) %>
+      <%= form.submit "criar refeição",class:"btn btn-success mr-3 px-5  py-2"%>
+    <% else %>
+      <%= form.submit "atualizar refeição",class:"btn btn-success mr-3 px-5  py-2"%>
+    <% end %>
+    <%= link_to "voltar", meals_path,class:"btn btn-secondary px-5 py-2"%>
+  </div>
+  </div>
+  </div>
+  <% end %>

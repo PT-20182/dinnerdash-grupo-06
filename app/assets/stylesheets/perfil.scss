@@ -1,0 +1,50 @@
+// div maior com colunas de submits
+.form-box {
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    color: #7f7f7f;
+    background-color: #fafafa;
+    padding: 30px 80px;
+}
+
+//linhas com 2 caixinhas de submits
+.form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 25px;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+//arrumando estetica da caixinha de submit
+.submit {
+    height: 35px;
+    width: 550px;
+    font-size: 14px;
+    border: 1px solid #d3d8d4;
+    color: #7f7f7f;
+    border-radius: 3px;
+}
+
+// botao verde de atualizar
+  
+.button-perfil {
+    height: 35px;
+    width: 350px;
+    font-size: 14px;
+    border: 1px solid #129e32;
+    color: white;
+    background-color: #28a745;
+    border-radius: 3px;
+}
+
+
+// para as mensagens de alert
+.alert {
+    margin-bottom: 0 !important;
+    border-radius: 0 !important;
+}

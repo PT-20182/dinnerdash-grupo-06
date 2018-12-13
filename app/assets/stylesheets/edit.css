@@ -1,0 +1,246 @@
+*
+{
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+
+}
+.logo
+{
+	font-family: 'Amaranth',sans-serif;
+	font-weight: normal;
+}
+.tamanho
+{
+	width: 100%	;
+	height: 100%;
+}
+.back
+{
+	display: flex;
+	width: 100%;
+	height: 100vh;
+}
+.perf
+{
+	display: flex;
+	background-color: #FAFAFA;
+	position: absolute;
+	flex-direction: row;
+	top:55vh;
+	width: 100%;
+	height: 45vh;
+}
+.campos
+{
+	width: 50%;
+	height: 100%;
+	left: 0px;
+}
+.campos1
+{
+	width: 50%;
+	height: 50%;
+	left: 0px;
+}
+#nome
+{
+	padding: 1.7%;
+	width: 100%;
+	border-radius: 4px;
+	border:solid 1px #a0a0a0;
+}
+
+#novasenha
+{
+	padding: 1.7%;
+	width: 100%;
+	border-radius: 4px;
+	border:solid 1px #a0a0a0;
+}
+#email
+{
+	padding: 1.7%;
+	width: 100%;
+	border-radius: 4px;
+	border:solid 1px #a0a0a0;
+}
+
+#senha
+{
+	padding: 1.7%;
+	width: 100%;
+	border-radius: 4px;
+	border:solid 1px #a0a0a0;
+}
+.pad
+{
+	padding:2%;
+	margin-left: 10%;
+	margin-right: 1%;
+}
+.pad2
+{
+	padding:2%;
+	margin-left: 1%;
+	margin-right: 10%;
+	order: 3;
+
+}
+.pad1
+{
+	padding: 2%;
+	margin-top:1%;
+	margin-left: 10%;
+	margin-right: 1%;
+}
+
+.button span
+{
+	color : white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer
+{
+	padding-left: 0.3em;
+	padding-top:0.8em;
+	position: fixed;
+	bottom: 0%;
+	background-color: #DEE2E6;
+	width: 100%;
+	height: 5vh;
+
+}
+
+
+
+.centro
+{
+	display: flex;
+	justify-content: center;
+	margin-top: 1em;
+}
+.tabela{
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	border-collapse: collapse;
+	width: 75%;
+	height: 0.7%;
+	background-color:  #FFFFFF;
+	text-align: left;
+	margin-top: 1%;
+
+
+}
+
+footer span
+{
+	font-size:1em;
+}
+.nav
+{
+	width: 100%;
+	margin-left:2%;
+}
+.nav a
+{
+	padding-left: 3%;
+	padding-top: 1%;
+}
+.nav a
+{
+	color:  #868686;
+}
+#current
+{
+	color: #DEE2E6;
+}
+.button:hover
+{
+	text-decoration: none;
+}
+#current:hover
+{
+	color: #DEE2E6;
+}
+#opcao:hover
+{
+	color:  #868686;
+}
+.titulo p
+{
+	position: absolute;
+	font-size: 70px;
+	top: 39%;
+	left: 5%;
+	color: #FAFAFA;
+}
+.titulo span
+{
+	position: absolute;
+	left: 5%;
+	top: 3%;
+	font-size: 28px;
+	color: #FAFAFA;
+}
+#decoracao
+{
+	position: absolute;
+	left: 5%;
+	top: 48%;
+	font-size: 30px;
+	color: #FAFAFA;
+}
+.topnav
+{
+	position: absolute;
+	right: 5%;
+	top: 3%;
+	font-size: 18px;
+	flex-direction: row;
+}
+.topnav a
+{
+	padding-right:15px;
+	color:#FAFAFA;
+}
+#currentt
+{
+	color: #FDDF4C;
+}
+.buttont:hover
+{
+	text-decoration: none;
+}
+#currentt:hover
+{
+	color: #FDDF4C;
+}
+#opcaot:hover
+{
+	color:  #FAFAFA;
+
+}
+.backoff
+{
+	font-family: sans-serif;
+	font-weight: bold;
+}
