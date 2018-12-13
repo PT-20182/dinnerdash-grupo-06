@@ -24,15 +24,15 @@
                     <% elsif order.status == "entregue" %>
                         <span class="badge badge-success px-5 py-2">entregue</span>
                     <% elsif order.status == "cancelado" %>
-                        <span class="badge badge-danger px-5 py-2">cancelado</span>    
+                        <span class="badge badge-danger px-5 py-2">cancelado</span>
                     <% end %>
                 </td>
                 <td><%= order.created_at.strftime("%d/%m/%Y") %></td>
                 <td><% if !@users.find_by_id(order.user_id).nil? %>
                     <%= @users.find_by_id(order.user_id).name %>
-                    <% end %>     
+                    <% end %>
                 </td>
-                <td><%= order.subtotal %></td>
+                <td><%= sprintf("%.2f",  order.subtotal).gsub '.',',' %></td>
                 <td><button type="button" class="btn btn-link p-0" id="noid" data-toggle="modal" data-target="#q<%=order.id %>">ver itens pedidos</button>
                     <div class="modal fade bd-example-modal-lg" id="q<%=order.id %>" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
@@ -70,11 +70,8 @@
                 <td><%= link_to "editar", edit_backoffice_order_path(order), class: "Edit" %></td>
                 <td><%= link_to "excluir", backoffice_order_path(order), method: :delete, class: "Del" %></td>
                 </tr>
-              <% end %>                
+              <% end %>
             <% end %>
-        </tbody>    
+        </tbody>
     </table>
 </div>
-
-
-
