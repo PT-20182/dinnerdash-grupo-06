@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2018_12_06_201939) do
   create_table "orders", force: :cascade do |t|
     t.float "subtotal"
     t.float "total"
-    t.float "tax"
+    t.string "status"
     t.float "shipping"
     t.integer "user_id"
     t.datetime "created_at", null: false

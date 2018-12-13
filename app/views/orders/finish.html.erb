@@ -3,27 +3,29 @@
 <h3 class="margin">O seu pedido:</h3>
 <p class=" margin mt-3 gray">confira os itens pedidos antes de finalizar o pedido</p>
 <div class="order-box-order">
-  <% @order.last.order_items.each do |item|%>
-  <div class="item-box mb-0" style="width: 41%;">
-    
-    <div class="item-text">
-      <div class="item-name"><%= item.meal.name %></div>
-      <div class="item-info">
-        <span>Quantidade: <%= item.quantity %></span>
-        <span>Preço unitário: R$ <%= sprintf("%.2f", item.unit_price).gsub '.',',' %></span>
-        <span>Preço total: R$ <%= sprintf("%.2f", item.total_price).gsub '.',',' %></span>
+  <% @orders.each do |items|%>
+    <% items.order_items.each do |item|%>
+    <div class="item-box mb-0" style="width: 41%;">
+      
+      <div class="item-text">
+        <div class="item-name"><%= item.meal.name %></div>
+        <div class="item-info">
+          <span>Quantidade: <%= item.quantity %></span>
+          <span>Preço unitário: R$ <%= sprintf("%.2f", item.unit_price).gsub '.',',' %></span>
+          <span>Preço total: R$ <%= sprintf("%.2f", item.total_price).gsub '.',',' %></span>
+        </div>
+      </div>
+      <div class="item-form ml-5">
+        <%= form_for( item , remote: true) do |f| %>
+          <div class="item-options-order">
+            <%= f.label :Quantidade, class: 'item-form-label' %>
+            <%= f.select :quantity, (1..10),{},{class: 'selector-item py-1', id: item.id, meal_id: item.meal.id } %>
+            <%= link_to "remover do meu prato", item, method: :delete, remote: true, class: 'button-item-delete  px-3 mt-3 py-1' %> 
+          </div>
+        <% end %>
       </div>
     </div>
-    <div class="item-form ml-5">
-      <%= form_for( item , remote: true) do |f| %>
-        <div class="item-options-order">
-          <%= f.label :Quantidade, class: 'item-form-label' %>
-          <%= f.select :quantity, (1..10),{},{class: 'selector-item py-1', id: item.id, meal_id: item.meal.id } %>
-          <%= link_to "remover do meu prato", item, method: :delete, remote: true, class: 'button-item-delete  px-3 mt-3 py-1' %>
-        </div>
-      <% end %>
-    </div>
-  </div>
+    <% end %>
   <% end %>
 </div>
 <div class="col pl-0 mb-5 margin"  style="width: 73.5%;">
@@ -86,7 +88,7 @@
       <div class="modal-body">
 
         <div class="row" id="margin">
-          <% @order.last.order_items.each do |item|%>
+          <% @orders.last.order_items.each do |item|%>
           <div class="item-box mb-0 ml-2" style="width: 45%;">
             
             <div class="item-text">
