@@ -3,7 +3,7 @@
 <h3 class="margin">O seu último pedido:</h3>
 <p class=" margin mt-3 gray">Aguarde o seu pedido ser entregue.</p>
 <div class="order-box-order">
-  <% @order.each do |item|%>
+  <% @orders.last.order_items.each do |item|%>
   <div class="item-box mb-0" style="width: 41%;">
     <img src= "<%= image_meal(item.meal) %>" class="item-image">
     <div class="item-text">
