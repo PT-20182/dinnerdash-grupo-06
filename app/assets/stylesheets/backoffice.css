@@ -121,21 +121,25 @@ tr
 	background-color: white;
 }
 .Edit:hover{
+	text-decoration: none;
 	padding :3%;
+	color: #FDDF4C;
 	border:none 0px green;
 	background-color: white;
 	cursor: pointer;
 	font-size: bold
 }
 .Del{
-		padding :3%;
+	padding :3%;
 	color: #E82431;
 	border:none 0px #E82431;
 	width: 100%;
 	background-color: white;
 }
 .Del:hover{
+	text-decoration: none;
 	padding :3%;
+	color: #E82431;
 	border:none 0px green;
 	background-color: white;
 	cursor: pointer;
@@ -348,4 +352,12 @@ footer span
  h3
 {
 	color: #4c4c4c;
+}
+#noid
+{
+ font-size: 14px
+}
+#noid:hover
+{
+	text-decoration: none; 
 }
