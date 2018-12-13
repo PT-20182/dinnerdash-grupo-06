@@ -21,6 +21,7 @@
           <%= f.select :quantity, (1..10),{},{class: 'selector-item py-1', id: item.id, meal_id: item.meal.id } %>
           <%= link_to "remover do meu prato", item, method: :delete, remote: true, class: 'button-item-delete  px-3 mt-3 py-1' %>
         </div>
+        
       <% end %>
     </div>
   </div>
