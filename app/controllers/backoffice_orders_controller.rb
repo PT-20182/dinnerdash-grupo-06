@@ -18,12 +18,13 @@ class BackofficeOrdersController < ApplicationController
 
   def edit
     @order = Order.find(params[:id])
+    @users = User.all
   end
 
   def update
     @order = Order.find(params[:id])
     @order.update_attributes(order_update_params)
-    redirect_to backoffice_orders_index_path
+    redirect_to backoffice_orders_path
   end
 
   def destroy
@@ -31,7 +32,7 @@ class BackofficeOrdersController < ApplicationController
     @order.destroy
 
     respond_to do |format|
-        format.html { redirect_to backoffice_orders_index_path}
+        format.html { redirect_to backoffice_orders_path}
         format.js
     end
   end
@@ -39,7 +40,7 @@ class BackofficeOrdersController < ApplicationController
   private
 
   def order_update_params
-    params.require(:order).permit(:tax, :user_id)
+    params.require(:order).permit(:status)
   end
 
 end

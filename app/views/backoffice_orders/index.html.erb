@@ -19,8 +19,10 @@
                     <%= order.id %>
                 </td>
                 <td> <% if order.status.nil? %>
-                    <span>Pendente</span>
-                <% end %>
+                        <span>pendente</span>
+                    <% else %>
+                        <%= order.status %>
+                    <% end %>
                 </td>
                 <td><%= order.created_at.strftime("%d/%m/%Y") %></td>
                 <td><% if !@users.find_by_id(order.user_id).nil? %>
@@ -28,9 +30,9 @@
                     <% end %>     
                 </td>
                 <td><%= order.subtotal %></td>
-                
-                
-                </tr>last
+                <td><%= link_to "editar", edit_backoffice_order_path(order) %></td>
+                <td><%= link_to "excluir", backoffice_order_path(order), method: :delete %></td>
+                </tr>
             <% end %>
         </tbody>    
     </table>

@@ -1,2 +1,54 @@
-<h1>BackofficeOrders#edit</h1>
-<p>Find me in app/views/backoffice_orders/edit.html.erb</p>
+<div class="edit-box">
+    <div class="edit-title">
+        Editar pedidos
+    </div>
+
+    <%= form_for( @order, url: backoffice_order_path(@order.id), html: { method: :put }) do |f| %>
+        <!--Mostrando mensagens de erro --->
+        <% @order.errors.full_messages.each do |message| %>
+            <div class="alert alert-danger" role="alert">
+            <strong><%= message%></strong>
+            </div>
+        <% end %>
+
+        <div class="row row-details">
+            <div class="col">
+                <%= f.label :Número, class: "edit-label" %><br/>
+                <div class="submit cadastrado-box"><%= @order.id %></div>
+            </div>
+
+            <div class="col">
+                <%= f.label :Perfil, class: "edit-label"%><br/>
+                <%= f.select :status, ["pendente", "entregue", "cancelado"], {}, {class: 'select-edit'}%>
+            </div>
+        </div>
+
+        <div class="row row-details">
+            <div class="col">
+                <%= f.label "Cadastrado em", class: "edit-label" %><br/>
+                <div class="submit cadastrado-box"><%= @order.created_at.strftime("%d/%m/%Y") %></div>
+            </div>
+            
+            <div class="col">
+                <%= f.label :Usuário, class: "edit-label" %><br/>
+                <div class="submit cadastrado-box"><%= @users.find_by_id(@order.user_id).name %></div>
+            </div>
+        </div>
+
+        <div class="row row-details">
+            <div class="col">
+                <%= f.label :Preço  , class: "edit-label" %><br/>
+                <div class="submit cadastrado-box"><%= @order.subtotal %></div>
+            </div>
+        </div>
+
+        <div class="button-edit-row row-details"> 
+            <div class="actions">
+                <%= f.submit "atualizar meu pedido", class: 'button-edit' %>
+            </div>
+            <div>
+                <%= link_to "voltar", backoffice_orders_path, class: 'link-edit-backoffice' %>
+            </div>
+        </div>
+    <% end %>
+</div>
