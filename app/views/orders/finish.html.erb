@@ -1,7 +1,7 @@
 <div class="folder-order">
 <div class="col p-0">
 <h3 class="margin">O seu pedido:</h3>
-<p class=" margin mt-3 gray">confira os itens pedidos antes de finalizar o pedido</p>
+<p class=" margin mt-3 gray">Confira os itens pedidos antes de finalizar o pedido</p>
 <div class="order-box-order">
 
   <% @order_item.each do |item|%>
@@ -22,7 +22,7 @@
           <%= f.select :quantity, (1..10),{},{class: 'selector-item py-1', id: item.id, meal_id: item.meal.id } %>
           <%= link_to "remover do meu prato", item, method: :delete, remote: true, class: 'button-item-delete  px-3 mt-3 py-1' %>
         </div>
-        
+
       <% end %>
     </div>
     <% end %>
@@ -69,7 +69,15 @@
   		          <% @orders.each do |order| %>
                 <tr>
                   <td><%=order.id %></td>
-                  <td><span class="badge badge-primary px-5 py-2">pendente</span></td>
+
+                  <td> <% if order.status.nil? || order.status == "pendente" %>
+                       <span class="badge badge-primary px-5 py-2">pendente</span>
+                   <% elsif order.status == "entregue" %>
+                       <span class="badge badge-success px-5 py-2">entregue</span>
+                   <% elsif order.status == "cancelado" %>
+                       <span class="badge badge-danger px-5 py-2">cancelado</span>
+                   <% end %>
+               </td>
                   <td><%= order.created_at.strftime("%d/%m/%Y") %></td>
                   <td>R$ <%= sprintf("%.2f", order.subtotal).gsub '.',',' %></td>
                   <td><button type="button" class="btn btn-link p-0" data-toggle="modal" data-target="#q<%=order.id %>">ver itens pedidos</button>
