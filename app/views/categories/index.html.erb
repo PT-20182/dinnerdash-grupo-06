@@ -12,7 +12,7 @@
 				          <% @categories.each do |category| %>
         <tbody>
 
-              <td><%= link_to category.name, category_path(category),class: "normal gray" %></td>
+              <td><div class="gray"><%= category.name %></div></td>
               <td><div class="gray"><%= category.meals.length %></div></td>
               <td><div class="gray"><%= category.created_at.strftime("%d/%m/%Y") %></div></td>
               <td><%= button_to 'editar', edit_category_path(category), method: 'get',class: "Edit"%></td>
