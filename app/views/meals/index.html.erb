@@ -3,8 +3,17 @@
     <div class="card-group m-0" id="margin">
       <% @meals.each do |meal| %>
       <div class="meal-card" id="botmargin" >
+        <% if meal.available == '1' %>
         <div class="meal-image" style="background-image: url(<%= image_meal(meal) %>)">
-          <div class="meal-name" align="center">
+        <% else %>
+        <div class="meal-image" style="background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(<%= image_meal(meal) %>)">
+          <span class="indisponivel">Refeição indisponível</span>
+        <% end %>
+          <% if meal.available == '1'%>
+          <div class="meal-name-1" align="center">
+          <% else%>
+          <div class="meal-name-0" align="center">
+          <% end %>
             <span><%= meal.name %><span>
           </div>
         </div>

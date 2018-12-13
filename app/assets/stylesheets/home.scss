@@ -33,7 +33,7 @@
     background-position: center;
 }
 
-.meal-name {
+.meal-name-1 {
     height: 50px;
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
     position: relative;
@@ -42,6 +42,25 @@
     display: flex;
     align-items: center;
     padding-left: 10px;
+}
+
+.meal-name-0 {
+    height: 50px;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
+    position: relative;
+    top: 166px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.indisponivel{
+    position: relative;
+    top: 100px;
+    left: 58.5px;
+    color: white;
+    font-size: 15px;
 }
 
 .meal-info {

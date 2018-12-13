@@ -14,11 +14,11 @@
   <div class="row">
     <div class="col">
         <%= form.label "Nome", class: "gray"%>
-          <%= form.text_field :name,class:"form-control" %>
+          <%= form.text_field :name,class:"form-control", required: true %>
     </div>
     <div class="col">
           <%= form.label "Categoria", class: "gray"%>
-      <select class="form-control" <%= form.collection_select(:category_id, Category.all, :id, :name, prompt: true) %></select>
+      <select class="form-control" <%= form.collection_select(:category_id, Category.all, :id, :name) %></select>
     </div>
   </div>
 
@@ -31,7 +31,7 @@
   <div class="row">
     <div class="col" style="width: 80em;">
           <%= form.label "Preço", class: "gray" %>
-          <%= form.text_field :price ,class:"form-control" %>
+          <%= form.number_field :price , min: 0 , step: :any , required: true, class: "form-control"%>
           <br>
     </div>
     <div class="col">
